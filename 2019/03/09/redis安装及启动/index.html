@@ -84,7 +84,7 @@
 <meta property="og:image" content="http://yoursite.com/images/redis/redis1.bmp">
 <meta property="og:image" content="http://yoursite.com/images/redis/redis2.bmp">
 <meta property="og:image" content="http://yoursite.com/images/redis/redis3.bmp">
-<meta property="og:updated_time" content="2019-03-09T11:53:15.155Z">
+<meta property="og:updated_time" content="2019-03-10T13:00:39.669Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis安装及启动">
 <meta name="twitter:description" content="redis的安装Redis是c语言开发的。安装redis需要c语言的编译环境。如果没有gcc需要在线安装。1[root@localhost ~]# yum install gcc-c++ 安装步骤： 第一步:从网上下载redis1[root@localhost ~]# wget http://download.redis.io/releases/redis-3.2.10.tar.gz 第二步:解压">
@@ -344,7 +344,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  238
+                  249
                 </span>
               
 
@@ -378,9 +378,9 @@
 <h4 id="连接redis"><a href="#连接redis" class="headerlink" title="连接redis"></a>连接redis</h4><h5 id="redis的启动"><a href="#redis的启动" class="headerlink" title="redis的启动"></a>redis的启动</h5><p>前端启动：在redis的安装目录下直接启动redis-server<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost bin]# ./redis-server</span><br></pre></td></tr></table></figure></p>
 <p><img src="/images/redis/redis1.bmp" alt><br>后台启动：复制conf文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost redis-3.2.10]# cp redis.conf /usr/local/redis/bin</span><br></pre></td></tr></table></figure></p>
 <p>然后修改文件,no改为yes<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost bin]# vim redis.conf</span><br></pre></td></tr></table></figure></p>
-<p><img src="/images/redis/redis2.bmp" alt><br>启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost bin]# ./redis-server redis.conf</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/redis/redis2.bmp" alt><br>启动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost bin]# ./redis-server redis.conf</span><br></pre></td></tr></table></figure></p>
 <p>查看redis进程:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost bin]# ps aux|grep redis</span><br></pre></td></tr></table></figure></p>
-<p><img src="/images/redis/redis3.bmp" alt></p>
+<p><img src="/images/redis/redis3.bmp" alt><br>关闭命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost bin]# ./redis-cli shutdown</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -428,6 +428,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/10/redis的持久化/" rel="prev" title="redis的持久化">
+                redis的持久化 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -506,7 +510,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -528,7 +532,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
