@@ -62,7 +62,7 @@
 
 
 
-  <meta name="keywords" content="反向代理,负载均衡,">
+  <meta name="keywords" content="日常问题,">
 
 
 
@@ -73,32 +73,21 @@
 
 
 
-<meta name="description" content="什么是反向代理正向代理:代理的是客户端，类似于VPN，代理上网反向代理代理的服务端，反向代理服务器决定哪台服务器提供服务 nginx实现反向代理多个域名指向同一台nginx服务器，用户访问不同的域名显示不同的网页内容。 第一步:安装两个tomcat（可以多个，以两个举例。可以参考这里解压完成后修改tomcat的端口号1[root@localhost ~]# vim tomcat-kt/conf/s">
-<meta name="keywords" content="反向代理,负载均衡">
+<meta name="description" content="在搭建redis集群时，redis官方提供了redis-trib.rb工具，但需要通过gem install redis来安装相关依赖。在执行时报错原来CentOS7 yum库中ruby的版本支持到 2.0.0,可gem 安装redis需要最低是2.2.2。只能提升ruby版本 安装curl1[root@localhost ~]# yum install curl 安装RVM1[root@loca">
+<meta name="keywords" content="日常问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="反向代理">
-<meta property="og:url" content="http://yoursite.com/2019/03/05/反向代理/index.html">
+<meta property="og:title" content="Ruby版本问题">
+<meta property="og:url" content="http://yoursite.com/2019/03/12/Ruby版本问题/index.html">
 <meta property="og:site_name" content="雅俗共赏">
-<meta property="og:description" content="什么是反向代理正向代理:代理的是客户端，类似于VPN，代理上网反向代理代理的服务端，反向代理服务器决定哪台服务器提供服务 nginx实现反向代理多个域名指向同一台nginx服务器，用户访问不同的域名显示不同的网页内容。 第一步:安装两个tomcat（可以多个，以两个举例。可以参考这里解压完成后修改tomcat的端口号1[root@localhost ~]# vim tomcat-kt/conf/s">
+<meta property="og:description" content="在搭建redis集群时，redis官方提供了redis-trib.rb工具，但需要通过gem install redis来安装相关依赖。在执行时报错原来CentOS7 yum库中ruby的版本支持到 2.0.0,可gem 安装redis需要最低是2.2.2。只能提升ruby版本 安装curl1[root@localhost ~]# yum install curl 安装RVM1[root@loca">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/nginx/zhengxiang.bmp">
-<meta property="og:image" content="http://yoursite.com/images/nginx/fanxiang.bmp">
-<meta property="og:image" content="http://yoursite.com/images/nginx/1.bmp">
-<meta property="og:image" content="http://yoursite.com/images/nginx/2.bmp">
-<meta property="og:image" content="http://yoursite.com/images/nginx/3.bmp">
-<meta property="og:image" content="http://yoursite.com/images/nginx/kt-index.bmp">
-<meta property="og:image" content="http://yoursite.com/images/nginx/swear-index.bmp">
-<meta property="og:image" content="http://yoursite.com/images/nginx/yuming.bmp">
-<meta property="og:image" content="http://yoursite.com/images/nginx/tomcat-kt.bmp">
-<meta property="og:image" content="http://yoursite.com/images/nginx/tomcat-swear.bmp">
-<meta property="og:image" content="http://yoursite.com/images/nginx/fuzaijunheng.bmp">
-<meta property="og:image" content="http://yoursite.com/images/nginx/fuzai-kt.bmp">
-<meta property="og:image" content="http://yoursite.com/images/nginx/fuzai-kt2.bmp">
-<meta property="og:updated_time" content="2019-03-09T09:48:38.355Z">
+<meta property="og:image" content="http://yoursite.com/images/redis/redis6.bmp">
+<meta property="og:image" content="http://yoursite.com/images/redis/redis7.bmp">
+<meta property="og:updated_time" content="2019-03-12T15:07:46.952Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="反向代理">
-<meta name="twitter:description" content="什么是反向代理正向代理:代理的是客户端，类似于VPN，代理上网反向代理代理的服务端，反向代理服务器决定哪台服务器提供服务 nginx实现反向代理多个域名指向同一台nginx服务器，用户访问不同的域名显示不同的网页内容。 第一步:安装两个tomcat（可以多个，以两个举例。可以参考这里解压完成后修改tomcat的端口号1[root@localhost ~]# vim tomcat-kt/conf/s">
-<meta name="twitter:image" content="http://yoursite.com/images/nginx/zhengxiang.bmp">
+<meta name="twitter:title" content="Ruby版本问题">
+<meta name="twitter:description" content="在搭建redis集群时，redis官方提供了redis-trib.rb工具，但需要通过gem install redis来安装相关依赖。在执行时报错原来CentOS7 yum库中ruby的版本支持到 2.0.0,可gem 安装redis需要最低是2.2.2。只能提升ruby版本 安装curl1[root@localhost ~]# yum install curl 安装RVM1[root@loca">
+<meta name="twitter:image" content="http://yoursite.com/images/redis/redis6.bmp">
 
 
 
@@ -128,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/05/反向代理/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/12/Ruby版本问题/">
 
 
 
 
 
-  <title>反向代理 | 雅俗共赏</title>
+  <title>Ruby版本问题 | 雅俗共赏</title>
   
 
 
@@ -261,7 +250,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/05/反向代理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/12/Ruby版本问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="serendipityh">
@@ -278,7 +267,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">反向代理</h1>
+          <h1 class="post-title" itemprop="name headline">Ruby版本问题</h1>
         
 
         <div class="post-meta">
@@ -290,8 +279,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-05T20:02:38+08:00">
-                2019-03-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-12T22:32:36+08:00">
+                2019-03-12
               </time>
             
 
@@ -313,8 +302,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux-nginx/" itemprop="url" rel="index">
-                    <span itemprop="name">linux-nginx</span>
+                  <a href="/categories/linux-redis/" itemprop="url" rel="index">
+                    <span itemprop="name">linux-redis</span>
                   </a>
                 </span>
 
@@ -344,7 +333,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  470
+                  248
                 </span>
               
 
@@ -369,20 +358,18 @@
       
 
       
-        <h2 id="什么是反向代理"><a href="#什么是反向代理" class="headerlink" title="什么是反向代理"></a>什么是反向代理</h2><p>正向代理:<br>代理的是客户端，类似于VPN，代理上网<br><img src="/images/nginx/zhengxiang.bmp" alt="查看"><br>反向代理<br>代理的服务端，反向代理服务器决定哪台服务器提供服务<br><img src="/images/nginx/fanxiang.bmp" alt="查看"></p>
-<h2 id="nginx实现反向代理"><a href="#nginx实现反向代理" class="headerlink" title="nginx实现反向代理"></a>nginx实现反向代理</h2><p>多个域名指向同一台nginx服务器，用户访问不同的域名显示不同的网页内容。</p>
-<p>第一步:安装两个tomcat（可以多个，以两个举例。可以参考<a href="https://github.com/SerendipityH/Linux/blob/master/command/tomcat%E5%AE%89%E8%A3%85" target="_blank" rel="noopener">这里</a><br>解压完成后修改tomcat的端口号<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vim tomcat-kt/conf/server.xml</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vim tomcat-swear/conf/server.xml</span><br></pre></td></tr></table></figure>
-<p>修改以下这三处(只需在原来端口号往上加一就行)<br><img src="/images/nginx/1.bmp" alt><br><img src="/images/nginx/2.bmp" alt><br><img src="/images/nginx/3.bmp" alt><br>修改tomcat下的index.jsp便于区分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vim tomcat-kt/webapps/ROOT/index.jsp</span><br></pre></td></tr></table></figure></p>
-<p><img src="/images/nginx/kt-index.bmp" alt><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vim tomcat-swear/webapps/ROOT/index.jsp</span><br></pre></td></tr></table></figure></p>
-<p><img src="/images/nginx/swear-index.bmp" alt><br>第二步:启动tomcat<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# tomcat-kt/bin/startup.sh</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# tomcat-swear/bin/startup.sh</span><br></pre></td></tr></table></figure>
-<p>第三步:反向代理服务器的配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost conf]# vim nginx.conf</span><br></pre></td></tr></table></figure></p>
-<p>加上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">upstream swear&#123;</span><br><span class="line">        server 192.168.30.130:8082;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  www.swear.com;</span><br><span class="line"></span><br><span class="line">        #charset koi8-r;</span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass  http://swear;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">upstream kt&#123;</span><br><span class="line">        server 192.168.30.130:8081;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  www.kt.com;</span><br><span class="line"></span><br><span class="line">        #charset koi8-r;</span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass  http://kt;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>第四步:重启nginx<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost nginx]# sbin/nginx -s reload</span><br></pre></td></tr></table></figure></p>
-<p>第五步:配置域名<br>在hosts文件中添加域名和ip的映射关系<br><img src="/images/nginx/yuming.bmp" alt><br>第六步:访问<br><img src="/images/nginx/tomcat-kt.bmp" alt><br><img src="/images/nginx/tomcat-swear.bmp" alt></p>
-<h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><p>如果一个服务由多个服务器提供，需要把负载分配到不同的服务器处理，需要负载均衡。<br>再新增一个tomcat，并修改端口号和index.jsp<br><img src="/images/nginx/fuzaijunheng.bmp" alt><br><img src="/images/nginx/fuzai-kt.bmp" alt><br><img src="/images/nginx/fuzai-kt2.bmp" alt><br>可以根据服务器的实际情况调整服务器权重。权重越高分配的请求越多，权重越低，请求越少。默认是都是1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">upstream kt&#123;</span><br><span class="line">        server 192.168.30.130:8081;</span><br><span class="line">        server 192.168.30.130:8083 weight=2; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>在搭建redis集群时，redis官方提供了redis-trib.rb工具，但需要通过gem install redis来安装相关依赖。在执行时报错<br><img src="/images/redis/redis6.bmp" alt><br>原来CentOS7 yum库中ruby的版本支持到 2.0.0,可gem 安装redis需要最低是2.2.2。只能提升ruby版本</p>
+<h6 id="安装curl"><a href="#安装curl" class="headerlink" title="安装curl"></a>安装curl</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# yum install curl</span><br></pre></td></tr></table></figure>
+<h6 id="安装RVM"><a href="#安装RVM" class="headerlink" title="安装RVM"></a>安装RVM</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# curl -L get.rvm.io | bash -s stable</span><br></pre></td></tr></table></figure>
+<h6 id="执行生效"><a href="#执行生效" class="headerlink" title="执行生效"></a>执行生效</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# source /usr/local/rvm/scripts/rvm</span><br></pre></td></tr></table></figure>
+<h6 id="查看rvm库中已知的ruby版本"><a href="#查看rvm库中已知的ruby版本" class="headerlink" title="查看rvm库中已知的ruby版本"></a>查看rvm库中已知的ruby版本</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# rvm list known</span><br></pre></td></tr></table></figure>
+<p><img src="/images/redis/redis7.bmp" alt></p>
+<h6 id="安装一个ruby版本"><a href="#安装一个ruby版本" class="headerlink" title="安装一个ruby版本"></a>安装一个ruby版本</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# rvm install 2.3.8</span><br></pre></td></tr></table></figure>
+<h6 id="使用安装的版本"><a href="#使用安装的版本" class="headerlink" title="使用安装的版本"></a>使用安装的版本</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# rvm use 2.3.8</span><br><span class="line">Using /usr/local/rvm/gems/ruby-2.3.8</span><br></pre></td></tr></table></figure>
+<h6 id="卸载原来的版本"><a href="#卸载原来的版本" class="headerlink" title="卸载原来的版本"></a>卸载原来的版本</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# rvm remove 2.0.0</span><br></pre></td></tr></table></figure>
+<h6 id="查看ruby版本"><a href="#查看ruby版本" class="headerlink" title="查看ruby版本"></a>查看ruby版本</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# ruby --version</span><br><span class="line">ruby 2.3.8p459 (2018-10-18 revision 65136) [x86_64-linux]</span><br></pre></td></tr></table></figure>
+<h6 id="重新安装redis"><a href="#重新安装redis" class="headerlink" title="重新安装redis"></a>重新安装redis</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# gem install redis</span><br><span class="line">Fetching: redis-4.1.0.gem (100%)</span><br><span class="line">Successfully installed redis-4.1.0</span><br><span class="line">Parsing documentation for redis-4.1.0</span><br><span class="line">Installing ri documentation for redis-4.1.0</span><br><span class="line">Done installing documentation for redis after 1 seconds</span><br><span class="line">1 gem installed</span><br></pre></td></tr></table></figure>
+<p>参考博客：<br><a href="https://blog.csdn.net/fengye_yulu/article/details/77628094" target="_blank" rel="noopener">https://blog.csdn.net/fengye_yulu/article/details/77628094</a></p>
 
       
     </div>
@@ -408,9 +395,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/反向代理/" rel="tag"># 反向代理</a>
-          
-            <a href="/tags/负载均衡/" rel="tag"># 负载均衡</a>
+            <a href="/tags/日常问题/" rel="tag"># 日常问题</a>
           
         </div>
       
@@ -423,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/02/nginx安装/" rel="next" title="nginx安装">
-                <i class="fa fa-chevron-left"></i> nginx安装
+              <a href="/2019/03/10/redis的持久化/" rel="next" title="redis的持久化">
+                <i class="fa fa-chevron-left"></i> redis的持久化
               </a>
             
           </div>
@@ -432,10 +417,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/09/redis安装及启动/" rel="prev" title="redis安装及启动">
-                redis安装及启动 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -585,7 +566,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是反向代理"><span class="nav-number">1.</span> <span class="nav-text">什么是反向代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx实现反向代理"><span class="nav-number">2.</span> <span class="nav-text">nginx实现反向代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#负载均衡"><span class="nav-number">3.</span> <span class="nav-text">负载均衡</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#安装curl"><span class="nav-number">1.</span> <span class="nav-text">安装curl</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#安装RVM"><span class="nav-number">2.</span> <span class="nav-text">安装RVM</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#执行生效"><span class="nav-number">3.</span> <span class="nav-text">执行生效</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#查看rvm库中已知的ruby版本"><span class="nav-number">4.</span> <span class="nav-text">查看rvm库中已知的ruby版本</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#安装一个ruby版本"><span class="nav-number">5.</span> <span class="nav-text">安装一个ruby版本</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#使用安装的版本"><span class="nav-number">6.</span> <span class="nav-text">使用安装的版本</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#卸载原来的版本"><span class="nav-number">7.</span> <span class="nav-text">卸载原来的版本</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#查看ruby版本"><span class="nav-number">8.</span> <span class="nav-text">查看ruby版本</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#重新安装redis"><span class="nav-number">9.</span> <span class="nav-text">重新安装redis</span></a></li></ol></div>
             
 
           </div>
