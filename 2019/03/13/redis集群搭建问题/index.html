@@ -84,7 +84,7 @@
 <meta property="og:image" content="http://yoursite.com/images/redis/redis8.bmp">
 <meta property="og:image" content="http://yoursite.com/images/redis/redis9.bmp">
 <meta property="og:image" content="http://yoursite.com/images/redis/redis10.bmp">
-<meta property="og:updated_time" content="2019-03-13T00:40:04.513Z">
+<meta property="og:updated_time" content="2019-03-14T12:50:22.519Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis集群搭建问题">
 <meta name="twitter:description" content="在使用ruby脚本搭建集群，出现can not connect to node 192.168.25.128:7001因redis.conf文件中是bind 127.0.0.1,把bind后改成虚拟机ip地址，然后重新执行即可。这边最好把原先启动的redis集群关闭。1[root@localhost redis-cluster]# ./redis-trib.rb create --replicas">
@@ -334,7 +334,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  110
+                  161
                 </span>
               
 
@@ -361,6 +361,7 @@
       
         <p>在使用ruby脚本搭建集群，出现can not connect to node 192.168.25.128:7001<br><img src="/images/redis/redis8.bmp" alt><br>因redis.conf文件中是bind 127.0.0.1,把bind后改成虚拟机ip地址，然后重新执行即可。这边最好把原先启动的redis集群关闭。<br><img src="/images/redis/redis9.bmp" alt><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost redis-cluster]# ./redis-trib.rb create --replicas 1 192.168.25.128:7001 192.168.25.128:7002 192.168.25.128:7003 192.168.25.128:7004 192.168.25.128:7005 192.168.25.128:7006</span><br></pre></td></tr></table></figure></p>
 <p>成功执行<br><img src="/images/redis/redis10.bmp" alt></p>
+<p>在redis集群单元测试时出现错误 CLUSTERDOWN Hash slot not served<br>使用ruby脚本搭建集群这边一定要yes,我写了y就报错了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Can I set the above configuration? (type &apos;yes&apos; to accept): yes</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
