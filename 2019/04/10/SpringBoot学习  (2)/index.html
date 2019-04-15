@@ -73,20 +73,20 @@
 
 
 
-<meta name="description" content="SpringBoot 整合servlet传统的web.xml配置Servlet12345678910111213141516171819&amp;lt;!-- springmvc的前端控制器 --&amp;gt;&amp;lt;servlet&amp;gt;	&amp;lt;servlet-name&amp;gt;kt-serendipity&amp;lt;/servlet-name&amp;gt;	&amp;lt;servlet-class&amp;gt;org.sprin">
+<meta name="description" content="SpringBoot 整合servlet传统的web.xml配置Servlet">
 <meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot学习（2）">
 <meta property="og:url" content="http://yoursite.com/2019/04/10/SpringBoot学习  (2)/index.html">
 <meta property="og:site_name" content="雅俗共赏">
-<meta property="og:description" content="SpringBoot 整合servlet传统的web.xml配置Servlet12345678910111213141516171819&amp;lt;!-- springmvc的前端控制器 --&amp;gt;&amp;lt;servlet&amp;gt;	&amp;lt;servlet-name&amp;gt;kt-serendipity&amp;lt;/servlet-name&amp;gt;	&amp;lt;servlet-class&amp;gt;org.sprin">
+<meta property="og:description" content="SpringBoot 整合servlet传统的web.xml配置Servlet">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/SpringBoot/SpringBoot5.bmp">
 <meta property="og:image" content="http://yoursite.com/images/SpringBoot/SpringBoot6.bmp">
-<meta property="og:updated_time" content="2019-04-10T12:43:28.327Z">
+<meta property="og:updated_time" content="2019-04-14T16:32:50.915Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot学习（2）">
-<meta name="twitter:description" content="SpringBoot 整合servlet传统的web.xml配置Servlet12345678910111213141516171819&amp;lt;!-- springmvc的前端控制器 --&amp;gt;&amp;lt;servlet&amp;gt;	&amp;lt;servlet-name&amp;gt;kt-serendipity&amp;lt;/servlet-name&amp;gt;	&amp;lt;servlet-class&amp;gt;org.sprin">
+<meta name="twitter:description" content="SpringBoot 整合servlet传统的web.xml配置Servlet">
 <meta name="twitter:image" content="http://yoursite.com/images/SpringBoot/SpringBoot5.bmp">
 
 
@@ -217,6 +217,26 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -333,7 +353,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  433
+                  434
                 </span>
               
 
@@ -358,7 +378,8 @@
       
 
       
-        <h3 id="SpringBoot-整合servlet"><a href="#SpringBoot-整合servlet" class="headerlink" title="SpringBoot 整合servlet"></a>SpringBoot 整合servlet</h3><h4 id="传统的web-xml配置Servlet"><a href="#传统的web-xml配置Servlet" class="headerlink" title="传统的web.xml配置Servlet"></a>传统的web.xml配置Servlet</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- springmvc的前端控制器 --&gt;</span><br><span class="line">&lt;servlet&gt;</span><br><span class="line">	&lt;servlet-name&gt;kt-serendipity&lt;/servlet-name&gt;</span><br><span class="line">	&lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;</span><br><span class="line">	&lt;!-- contextConfigLocation不是必须的， 如果不配置contextConfigLocation， springmvc的配置文件默认在：WEB-INF/servlet的name+&quot;-servlet.xml&quot; --&gt;</span><br><span class="line">	&lt;init-param&gt;</span><br><span class="line">		&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">		&lt;param-value&gt;classpath:spring/springmvc.xml&lt;/param-value&gt;</span><br><span class="line">	&lt;/init-param&gt;</span><br><span class="line">	&lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</span><br><span class="line">&lt;/servlet&gt;</span><br><span class="line">&lt;servlet-mapping&gt;</span><br><span class="line">	&lt;servlet-name&gt;kt-serendipity&lt;/servlet-name&gt;</span><br><span class="line">	&lt;url-pattern&gt;*.html&lt;/url-pattern&gt;</span><br><span class="line">&lt;/servlet-mapping&gt;</span><br><span class="line">&lt;servlet-mapping&gt;</span><br><span class="line">	&lt;servlet-name&gt;kt-serendipity&lt;/servlet-name&gt;</span><br><span class="line">	&lt;url-pattern&gt;*.action&lt;/url-pattern&gt;</span><br><span class="line">&lt;/servlet-mapping&gt;</span><br></pre></td></tr></table></figure>
+        <h3 id="SpringBoot-整合servlet"><a href="#SpringBoot-整合servlet" class="headerlink" title="SpringBoot 整合servlet"></a>SpringBoot 整合servlet</h3><h4 id="传统的web-xml配置Servlet"><a href="#传统的web-xml配置Servlet" class="headerlink" title="传统的web.xml配置Servlet"></a>传统的web.xml配置Servlet</h4><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- springmvc的前端控制器 --&gt;</span><br><span class="line">&lt;servlet&gt;</span><br><span class="line">	&lt;servlet-name&gt;kt-serendipity&lt;/servlet-name&gt;</span><br><span class="line">	&lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;</span><br><span class="line">	&lt;!-- contextConfigLocation不是必须的， 如果不配置contextConfigLocation， springmvc的配置文件默认在：WEB-INF/servlet的name+&quot;-servlet.xml&quot; --&gt;</span><br><span class="line">	&lt;init-param&gt;</span><br><span class="line">		&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">		&lt;param-value&gt;classpath:spring/springmvc.xml&lt;/param-value&gt;</span><br><span class="line">	&lt;/init-param&gt;</span><br><span class="line">	&lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</span><br><span class="line">&lt;/servlet&gt;</span><br><span class="line">&lt;servlet-mapping&gt;</span><br><span class="line">	&lt;servlet-name&gt;kt-serendipity&lt;/servlet-name&gt;</span><br><span class="line">	&lt;url-pattern&gt;*.html&lt;/url-pattern&gt;</span><br><span class="line">&lt;/servlet-mapping&gt;</span><br><span class="line">&lt;servlet-mapping&gt;</span><br><span class="line">	&lt;servlet-name&gt;kt-serendipity&lt;/servlet-name&gt;</span><br><span class="line">	&lt;url-pattern&gt;*.action&lt;/url-pattern&gt;</span><br><span class="line">&lt;/servlet-mapping&gt;</span><br></pre></td></tr></table></figure>
 <h4 id="SpringBoot-整合servlet方式一"><a href="#SpringBoot-整合servlet方式一" class="headerlink" title="SpringBoot 整合servlet方式一"></a>SpringBoot 整合servlet方式一</h4><p>在SpringBoot中没有web.xml，但SpringBoot提供了@WebServlet注解<br>通过扫描注解完成Servlet组件的注册<br>name对应<servlet-name><br>url-patterns对应<url-pattern>*.action</url-pattern><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@WebServlet(name = &quot;FirstServlet&quot;, urlPatterns = &quot;/first&quot;)</span><br><span class="line">public class FirstServlet extends HttpServlet &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void doGet(HttpServletRequest req, HttpServletResponse resp)</span><br><span class="line">            throws ServletException, IOException &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        System.out.println(&quot;MyFirstServlet&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></servlet-name></p>
 <p>再编写一个启动器<br>@ServletComponentScan 注解在SpringBoot启动时会扫描@WebServlet,并将该类实例化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@SpringBootApplication</span><br><span class="line">@ServletComponentScan </span><br><span class="line">public class App &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        SpringApplication.run(App.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><img src="/images/SpringBoot/SpringBoot5.bmp" alt></p>

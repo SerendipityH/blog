@@ -1937,7 +1937,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a6ff0a;
+  background: #3c41ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2790,7 +2790,7 @@ img:hover {
   box-sizing: border-box;
   padding: 40px;
   width: 700px;
-  background: #fff;
+  background: rgba(255,255,255,0.7);
   min-height: 700px;
   box-shadow: initial;
   border-radius: initial;
@@ -3104,4 +3104,16 @@ img:hover {
   .post-body {
     text-align: justify;
   }
+}
+article.post.post-type-normal {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  padding: 21px;
+  -webkit-box-shadow: 0 0 7px #657b83;
+}
+body {
+  background: url("/images/backGround.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
 }
