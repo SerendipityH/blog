@@ -73,21 +73,22 @@
 
 
 
-<meta name="description" content="SpringBoot访问静态资源SpringBoot从classpath下访问目录名称必须为static ServletContext根目录在src/main/webapp 目录名称必须为webapp没有就新建一个">
+<meta name="description" content="SpringBoot访问静态资源SpringBoot从classpath下访问目录名称必须为static ServletContext根目录在src/main/webapp 目录名称必须为webapp没有就新建一个 SpringBoot 设置上传文件大小的默认值需要添加一个SpringBoot的配置文件application.properties12设置单个上传文件的大小spring.http.m">
 <meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot学习（4）">
 <meta property="og:url" content="http://yoursite.com/2019/04/16/SpringBoot学习  (4)/index.html">
 <meta property="og:site_name" content="雅俗共赏">
-<meta property="og:description" content="SpringBoot访问静态资源SpringBoot从classpath下访问目录名称必须为static ServletContext根目录在src/main/webapp 目录名称必须为webapp没有就新建一个">
+<meta property="og:description" content="SpringBoot访问静态资源SpringBoot从classpath下访问目录名称必须为static ServletContext根目录在src/main/webapp 目录名称必须为webapp没有就新建一个 SpringBoot 设置上传文件大小的默认值需要添加一个SpringBoot的配置文件application.properties12设置单个上传文件的大小spring.http.m">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/SpringBoot/SpringBoot7.bmp">
 <meta property="og:image" content="http://yoursite.com/images/SpringBoot/SpringBoot8.bmp">
 <meta property="og:image" content="http://yoursite.com/images/SpringBoot/SpringBoot9.bmp">
-<meta property="og:updated_time" content="2019-04-16T14:20:43.968Z">
+<meta property="og:image" content="http://yoursite.com/images/SpringBoot/SpringBoot10.bmp">
+<meta property="og:updated_time" content="2019-04-17T13:21:10.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot学习（4）">
-<meta name="twitter:description" content="SpringBoot访问静态资源SpringBoot从classpath下访问目录名称必须为static ServletContext根目录在src/main/webapp 目录名称必须为webapp没有就新建一个">
+<meta name="twitter:description" content="SpringBoot访问静态资源SpringBoot从classpath下访问目录名称必须为static ServletContext根目录在src/main/webapp 目录名称必须为webapp没有就新建一个 SpringBoot 设置上传文件大小的默认值需要添加一个SpringBoot的配置文件application.properties12设置单个上传文件的大小spring.http.m">
 <meta name="twitter:image" content="http://yoursite.com/images/SpringBoot/SpringBoot7.bmp">
 
 
@@ -354,7 +355,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  40
+                  100
                 </span>
               
 
@@ -381,7 +382,8 @@
       
         <h3 id="SpringBoot访问静态资源"><a href="#SpringBoot访问静态资源" class="headerlink" title="SpringBoot访问静态资源"></a>SpringBoot访问静态资源</h3><h4 id="SpringBoot从classpath下访问"><a href="#SpringBoot从classpath下访问" class="headerlink" title="SpringBoot从classpath下访问"></a>SpringBoot从classpath下访问</h4><p>目录名称必须为static<br><img src="/images/SpringBoot/SpringBoot7.bmp" alt><br><img src="/images/SpringBoot/SpringBoot8.bmp" alt></p>
 <h4 id="ServletContext根目录"><a href="#ServletContext根目录" class="headerlink" title="ServletContext根目录"></a>ServletContext根目录</h4><p>在src/main/webapp 目录名称必须为webapp<br>没有就新建一个<br><img src="/images/SpringBoot/SpringBoot9.bmp" alt></p>
-
+<h3 id="SpringBoot-设置上传文件大小的默认值"><a href="#SpringBoot-设置上传文件大小的默认值" class="headerlink" title="SpringBoot 设置上传文件大小的默认值"></a>SpringBoot 设置上传文件大小的默认值</h3><p>需要添加一个SpringBoot的配置文件<br>application.properties<br><img src="/images/SpringBoot/SpringBoot10.bmp" alt><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">设置单个上传文件的大小</span><br><span class="line">spring.http.multipart.maxFileSize=200MB</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">设置一次请求上传文件的总容量</span><br><span class="line">spring.http.multipart.maxRequestSize=200MB</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -577,7 +579,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringBoot访问静态资源"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot访问静态资源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringBoot从classpath下访问"><span class="nav-number">1.1.</span> <span class="nav-text">SpringBoot从classpath下访问</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ServletContext根目录"><span class="nav-number">1.2.</span> <span class="nav-text">ServletContext根目录</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringBoot访问静态资源"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot访问静态资源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SpringBoot从classpath下访问"><span class="nav-number">1.1.</span> <span class="nav-text">SpringBoot从classpath下访问</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ServletContext根目录"><span class="nav-number">1.2.</span> <span class="nav-text">ServletContext根目录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringBoot-设置上传文件大小的默认值"><span class="nav-number">2.</span> <span class="nav-text">SpringBoot 设置上传文件大小的默认值</span></a></li></ol></div>
             
 
           </div>

@@ -73,19 +73,19 @@
 
 
 
-<meta name="description" content="jvm 的主要组成部分及其作用  JVM内存区域主要分为： 线程私有区域：程序计数器、虚拟机栈、本地方法区 线程共享区域：Java堆、方法区 直接内存 程序计数器　　一块较小的内存空间, 是当前线程所执行的字节码的行号指示器，每条线程都要有一个独立的程序计数器，这类内存也称为“线程私有”的内存。 虚拟机栈　　是描述java方法执行的内存模型，每个方法在执行的同时都会创建一个栈帧（Stack Fra">
+<meta name="description" content="jvm 内存区域  JVM内存区域主要分为： 线程私有区域：程序计数器、虚拟机栈、本地方法区 线程共享区域：Java堆、方法区 直接内存 程序计数器　　一块较小的内存空间, 是当前线程所执行的字节码的行号指示器，每条线程都要有一个独立的程序计数器，这类内存也称为“线程私有”的内存。 虚拟机栈　　是描述java方法执行的内存模型，每个方法在执行的同时都会创建一个栈帧（Stack Frame）用于存储">
 <meta name="keywords" content="Java篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM学习（１）">
 <meta property="og:url" content="http://yoursite.com/2019/03/07/JVM学习(1)/index.html">
 <meta property="og:site_name" content="雅俗共赏">
-<meta property="og:description" content="jvm 的主要组成部分及其作用  JVM内存区域主要分为： 线程私有区域：程序计数器、虚拟机栈、本地方法区 线程共享区域：Java堆、方法区 直接内存 程序计数器　　一块较小的内存空间, 是当前线程所执行的字节码的行号指示器，每条线程都要有一个独立的程序计数器，这类内存也称为“线程私有”的内存。 虚拟机栈　　是描述java方法执行的内存模型，每个方法在执行的同时都会创建一个栈帧（Stack Fra">
+<meta property="og:description" content="jvm 内存区域  JVM内存区域主要分为： 线程私有区域：程序计数器、虚拟机栈、本地方法区 线程共享区域：Java堆、方法区 直接内存 程序计数器　　一块较小的内存空间, 是当前线程所执行的字节码的行号指示器，每条线程都要有一个独立的程序计数器，这类内存也称为“线程私有”的内存。 虚拟机栈　　是描述java方法执行的内存模型，每个方法在执行的同时都会创建一个栈帧（Stack Frame）用于存储">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/java/jvm/jvm1.bmp">
-<meta property="og:updated_time" content="2019-04-14T11:03:03.741Z">
+<meta property="og:updated_time" content="2019-04-17T13:11:02.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM学习（１）">
-<meta name="twitter:description" content="jvm 的主要组成部分及其作用  JVM内存区域主要分为： 线程私有区域：程序计数器、虚拟机栈、本地方法区 线程共享区域：Java堆、方法区 直接内存 程序计数器　　一块较小的内存空间, 是当前线程所执行的字节码的行号指示器，每条线程都要有一个独立的程序计数器，这类内存也称为“线程私有”的内存。 虚拟机栈　　是描述java方法执行的内存模型，每个方法在执行的同时都会创建一个栈帧（Stack Fra">
+<meta name="twitter:description" content="jvm 内存区域  JVM内存区域主要分为： 线程私有区域：程序计数器、虚拟机栈、本地方法区 线程共享区域：Java堆、方法区 直接内存 程序计数器　　一块较小的内存空间, 是当前线程所执行的字节码的行号指示器，每条线程都要有一个独立的程序计数器，这类内存也称为“线程私有”的内存。 虚拟机栈　　是描述java方法执行的内存模型，每个方法在执行的同时都会创建一个栈帧（Stack Frame）用于存储">
 <meta name="twitter:image" content="http://yoursite.com/images/java/jvm/jvm1.bmp">
 
 
@@ -377,14 +377,14 @@
       
 
       
-        <h3 id="jvm-的主要组成部分及其作用"><a href="#jvm-的主要组成部分及其作用" class="headerlink" title="jvm 的主要组成部分及其作用"></a>jvm 的主要组成部分及其作用</h3><p> <img src="/images/java/jvm/jvm1.bmp" alt><br> JVM内存区域主要分为：<br> 线程私有区域：程序计数器、虚拟机栈、本地方法区<br> 线程共享区域：Java堆、方法区<br> 直接内存</p>
+        <h3 id="jvm-内存区域"><a href="#jvm-内存区域" class="headerlink" title="jvm 内存区域"></a>jvm 内存区域</h3><p> <img src="/images/java/jvm/jvm1.bmp" alt><br> JVM内存区域主要分为：<br> 线程私有区域：程序计数器、虚拟机栈、本地方法区<br> 线程共享区域：Java堆、方法区<br> 直接内存</p>
 <h4 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h4><p>　　一块较小的内存空间, 是当前线程所执行的字节码的行号指示器，每条线程都要有一个独立的程序计数器，这类内存也称为“线程私有”的内存。</p>
 <h4 id="虚拟机栈"><a href="#虚拟机栈" class="headerlink" title="虚拟机栈"></a>虚拟机栈</h4><p>　　是描述java方法执行的内存模型，每个方法在执行的同时都会创建一个栈帧（Stack Frame）用于存储局部变量表、操作数栈、动态链接、方法出口等信息。每一个方法从调用直至执行完成的过程，就对应着一个栈帧在虚拟机栈中入栈到出栈的过程。</p>
 <h4 id="本地方法区"><a href="#本地方法区" class="headerlink" title="本地方法区"></a>本地方法区</h4><p>　　本地方法区和Java Stack作用类似, 区别是虚拟机栈为执行Java方法服务, 而本地方法栈则为Native方法服务, 如果一个VM实现使用C-linkage模型来支持Native调用, 那么该栈将会是一个C栈，但HotSpot VM直接就把本地方法栈和虚拟机栈合二为一。</p>
 <h4 id="堆-运行时数据区"><a href="#堆-运行时数据区" class="headerlink" title="堆-运行时数据区"></a>堆-运行时数据区</h4><p>　　是被线程共享的一块内存区域，创建的对象和数组都保存在Java堆内存中，也是垃圾收集器进行垃圾收集的最重要的内存区域。由于现代VM采用分代收集算法, 因此Java堆从GC的角度还可以细分为: 新生代(Eden区、From Survivor区和To Survivor区)和老年代。</p>
 <h4 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h4><p>　　即我们常说的永久代(Permanent Generation), 用于存储被JVM加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。</p>
 <h4 id="直接内存"><a href="#直接内存" class="headerlink" title="直接内存"></a>直接内存</h4><p>　　直接内存并不是JVM运行时数据区的一部分, 但也会被频繁的使用: 在JDK 1.4引入的NIO提供了基于Channel与Buffer的IO方式, 它可以使用Native函数库直接分配堆外内存, 然后使用DirectByteBuffer对象作为这块内存的引用进行操作(详见: Java I/O 扩展), 这样就避免了在Java堆和Native堆中来回复制数据, 因此在一些场景中可以显著提高性能</p>
-<h3 id="jvm-运行时数据区"><a href="#jvm-运行时数据区" class="headerlink" title="jvm 运行时数据区"></a>jvm 运行时数据区</h3><p>　　Java堆从GC的角度还可以细分为: 新生代(Eden区、From Survivor区和To Survivor区)和老年代。</p>
+<h3 id="jvm-运行时内存"><a href="#jvm-运行时内存" class="headerlink" title="jvm 运行时内存"></a>jvm 运行时内存</h3><p>　　Java堆从GC的角度还可以细分为: 新生代(Eden区、From Survivor区和To Survivor区)和老年代。</p>
 <h4 id="新生代"><a href="#新生代" class="headerlink" title="新生代"></a>新生代</h4><p>　　是用来存放新生的对象。一般占据堆的1/3空间。由于频繁创建对象，所以新生代会频繁触发MinorGC进行垃圾回收。<br>  新生代又分为Eden区、ServivorFrom、ServivorTo三个区。</p>
 <h5 id="Eden区："><a href="#Eden区：" class="headerlink" title="Eden区："></a>Eden区：</h5><p>　　Java新对象的出生地（如果新创建的对象占用内存很大，则直接分配到老年代）。当Eden区内存不够的时候就会触发MinorGC，对新生代区进行一次垃圾回收。</p>
 <h5 id="ServivorFrom"><a href="#ServivorFrom" class="headerlink" title="ServivorFrom:"></a>ServivorFrom:</h5><p>　　上一次GC的幸存者，作为这一次GC的被扫描者。</p>
@@ -592,7 +592,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#jvm-的主要组成部分及其作用"><span class="nav-number">1.</span> <span class="nav-text">jvm 的主要组成部分及其作用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#程序计数器"><span class="nav-number">1.1.</span> <span class="nav-text">程序计数器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#虚拟机栈"><span class="nav-number">1.2.</span> <span class="nav-text">虚拟机栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地方法区"><span class="nav-number">1.3.</span> <span class="nav-text">本地方法区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆-运行时数据区"><span class="nav-number">1.4.</span> <span class="nav-text">堆-运行时数据区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法区"><span class="nav-number">1.5.</span> <span class="nav-text">方法区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#直接内存"><span class="nav-number">1.6.</span> <span class="nav-text">直接内存</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jvm-运行时数据区"><span class="nav-number">2.</span> <span class="nav-text">jvm 运行时数据区</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新生代"><span class="nav-number">2.1.</span> <span class="nav-text">新生代</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Eden区："><span class="nav-number">2.1.1.</span> <span class="nav-text">Eden区：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ServivorFrom"><span class="nav-number">2.1.2.</span> <span class="nav-text">ServivorFrom:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ServivorTo"><span class="nav-number">2.1.3.</span> <span class="nav-text">ServivorTo:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#老年代"><span class="nav-number">2.2.</span> <span class="nav-text">老年代</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#jvm-内存区域"><span class="nav-number">1.</span> <span class="nav-text">jvm 内存区域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#程序计数器"><span class="nav-number">1.1.</span> <span class="nav-text">程序计数器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#虚拟机栈"><span class="nav-number">1.2.</span> <span class="nav-text">虚拟机栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地方法区"><span class="nav-number">1.3.</span> <span class="nav-text">本地方法区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆-运行时数据区"><span class="nav-number">1.4.</span> <span class="nav-text">堆-运行时数据区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法区"><span class="nav-number">1.5.</span> <span class="nav-text">方法区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#直接内存"><span class="nav-number">1.6.</span> <span class="nav-text">直接内存</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jvm-运行时内存"><span class="nav-number">2.</span> <span class="nav-text">jvm 运行时内存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新生代"><span class="nav-number">2.1.</span> <span class="nav-text">新生代</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Eden区："><span class="nav-number">2.1.1.</span> <span class="nav-text">Eden区：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ServivorFrom"><span class="nav-number">2.1.2.</span> <span class="nav-text">ServivorFrom:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ServivorTo"><span class="nav-number">2.1.3.</span> <span class="nav-text">ServivorTo:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#老年代"><span class="nav-number">2.2.</span> <span class="nav-text">老年代</span></a></li></ol></li></ol></div>
             
 
           </div>
