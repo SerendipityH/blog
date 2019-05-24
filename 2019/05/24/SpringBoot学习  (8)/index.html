@@ -73,19 +73,19 @@
 
 
 
-<meta name="description" content="SpringBoot热部署方式一:使用SpringLoader插件在pom文件添加插件配置123456789101112131415&amp;lt;build&amp;gt;		&amp;lt;plugins&amp;gt;			&amp;lt;plugin&amp;gt;				&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;				&amp;lt;artifactId&amp;gt;spring">
+<meta name="description" content="SpringBoot热部署">
 <meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring学习（8）">
 <meta property="og:url" content="http://yoursite.com/2019/05/24/SpringBoot学习  (8)/index.html">
 <meta property="og:site_name" content="雅俗共赏">
-<meta property="og:description" content="SpringBoot热部署方式一:使用SpringLoader插件在pom文件添加插件配置123456789101112131415&amp;lt;build&amp;gt;		&amp;lt;plugins&amp;gt;			&amp;lt;plugin&amp;gt;				&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;				&amp;lt;artifactId&amp;gt;spring">
+<meta property="og:description" content="SpringBoot热部署">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/SpringBoot/SpringBoot14.bmp">
-<meta property="og:updated_time" content="2019-05-24T12:09:29.280Z">
+<meta property="og:updated_time" content="2019-05-24T14:30:20.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring学习（8）">
-<meta name="twitter:description" content="SpringBoot热部署方式一:使用SpringLoader插件在pom文件添加插件配置123456789101112131415&amp;lt;build&amp;gt;		&amp;lt;plugins&amp;gt;			&amp;lt;plugin&amp;gt;				&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;				&amp;lt;artifactId&amp;gt;spring">
+<meta name="twitter:description" content="SpringBoot热部署">
 <meta name="twitter:image" content="http://yoursite.com/images/SpringBoot/SpringBoot14.bmp">
 
 
@@ -377,7 +377,8 @@
       
 
       
-        <h2 id="SpringBoot热部署"><a href="#SpringBoot热部署" class="headerlink" title="SpringBoot热部署"></a>SpringBoot热部署</h2><h3 id="方式一-使用SpringLoader插件"><a href="#方式一-使用SpringLoader插件" class="headerlink" title="方式一:使用SpringLoader插件"></a>方式一:使用SpringLoader插件</h3><p>在pom文件添加插件配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;build&gt;</span><br><span class="line">		&lt;plugins&gt;</span><br><span class="line">			&lt;plugin&gt;</span><br><span class="line">				&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">				&lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">				&lt;dependencies&gt;</span><br><span class="line">					&lt;dependency&gt;</span><br><span class="line">						&lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">						&lt;artifactId&gt;springloaded&lt;/artifactId&gt;</span><br><span class="line">						&lt;version&gt;1.2.5.RELEASE&lt;/version&gt;</span><br><span class="line">					&lt;/dependency&gt;</span><br><span class="line">				&lt;/dependencies&gt;</span><br><span class="line">			&lt;/plugin&gt;</span><br><span class="line">		&lt;/plugins&gt;</span><br><span class="line">	&lt;/build&gt;</span><br></pre></td></tr></table></figure></p>
+        <h2 id="SpringBoot热部署"><a href="#SpringBoot热部署" class="headerlink" title="SpringBoot热部署"></a>SpringBoot热部署</h2><a id="more"></a>
+<h3 id="方式一-使用SpringLoader插件"><a href="#方式一-使用SpringLoader插件" class="headerlink" title="方式一:使用SpringLoader插件"></a>方式一:使用SpringLoader插件</h3><p>在pom文件添加插件配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;build&gt;</span><br><span class="line">		&lt;plugins&gt;</span><br><span class="line">			&lt;plugin&gt;</span><br><span class="line">				&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">				&lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">				&lt;dependencies&gt;</span><br><span class="line">					&lt;dependency&gt;</span><br><span class="line">						&lt;groupId&gt;org.springframework&lt;/groupId&gt;</span><br><span class="line">						&lt;artifactId&gt;springloaded&lt;/artifactId&gt;</span><br><span class="line">						&lt;version&gt;1.2.5.RELEASE&lt;/version&gt;</span><br><span class="line">					&lt;/dependency&gt;</span><br><span class="line">				&lt;/dependencies&gt;</span><br><span class="line">			&lt;/plugin&gt;</span><br><span class="line">		&lt;/plugins&gt;</span><br><span class="line">	&lt;/build&gt;</span><br></pre></td></tr></table></figure></p>
 <p>maven build配置<br><img src="/images/SpringBoot/SpringBoot14.bmp" alt></p>
 <h3 id="方式二：使用Devtools工具"><a href="#方式二：使用Devtools工具" class="headerlink" title="方式二：使用Devtools工具"></a>方式二：使用Devtools工具</h3><p>在pom文件添加devtools的依赖<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- DevTools --&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;</span><br><span class="line">			&lt;!-- 表示当前依赖不向下传递 --&gt;</span><br><span class="line">			&lt;optional&gt;true&lt;/optional&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
 <p>总结：<br>SpringLoader：SpringLoader 在部署项目时使用的是热部署的方式。但只对Java代码做部署处理，对页面无能为力。<br>DevTools：DevTools 在部署项目时使用的是重新部署的方式</p>
@@ -428,6 +429,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/24/SpringBoot学习  (9)/" rel="prev" title="SpringBoot学习（9）">
+                SpringBoot学习（9） <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -506,7 +511,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
