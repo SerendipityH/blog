@@ -73,22 +73,22 @@
 
 
 
-<meta name="description" content="SpringBoot HelloWorld新建maven项目 加入所需的依赖">
+<meta name="description" content="SpringBoot HelloWorld">
 <meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot学习（1）">
 <meta property="og:url" content="http://yoursite.com/2019/04/09/SpringBoot学习  (1)/index.html">
 <meta property="og:site_name" content="雅俗共赏">
-<meta property="og:description" content="SpringBoot HelloWorld新建maven项目 加入所需的依赖">
+<meta property="og:description" content="SpringBoot HelloWorld">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/SpringBoot/SpringBoot1.bmp">
 <meta property="og:image" content="http://yoursite.com/images/SpringBoot/SpringBoot2.bmp">
 <meta property="og:image" content="http://yoursite.com/images/SpringBoot/SpringBoot3.bmp">
 <meta property="og:image" content="http://yoursite.com/images/SpringBoot/SpringBoot4.bmp">
-<meta property="og:updated_time" content="2019-04-14T16:34:20.736Z">
+<meta property="og:updated_time" content="2019-10-23T15:24:07.060Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot学习（1）">
-<meta name="twitter:description" content="SpringBoot HelloWorld新建maven项目 加入所需的依赖">
+<meta name="twitter:description" content="SpringBoot HelloWorld">
 <meta name="twitter:image" content="http://yoursite.com/images/SpringBoot/SpringBoot1.bmp">
 
 
@@ -355,7 +355,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  266
+                  267
                 </span>
               
 
@@ -380,8 +380,10 @@
       
 
       
-        <h3 id="SpringBoot-HelloWorld"><a href="#SpringBoot-HelloWorld" class="headerlink" title="SpringBoot HelloWorld"></a>SpringBoot HelloWorld</h3><h4 id="新建maven项目"><a href="#新建maven项目" class="headerlink" title="新建maven项目"></a>新建maven项目</h4><p><img src="/images/SpringBoot/SpringBoot1.bmp" alt></p>
-<h4 id="加入所需的依赖"><a href="#加入所需的依赖" class="headerlink" title="加入所需的依赖"></a>加入所需的依赖</h4><p><img src="/images/SpringBoot/SpringBoot2.bmp" alt><br><a id="more"></a><br>构建SpringBoot项目需要继承父项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Inherit defaults from Spring Boot --&gt;</span><br><span class="line">&lt;parent&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;2.1.4.RELEASE&lt;/version&gt;</span><br><span class="line">&lt;/parent&gt;</span><br></pre></td></tr></table></figure></p>
+        <h3 id="SpringBoot-HelloWorld"><a href="#SpringBoot-HelloWorld" class="headerlink" title="SpringBoot HelloWorld"></a>SpringBoot HelloWorld</h3><a id="more"></a>
+<h4 id="新建maven项目"><a href="#新建maven项目" class="headerlink" title="新建maven项目"></a>新建maven项目</h4><p><img src="/images/SpringBoot/SpringBoot1.bmp" alt></p>
+<h4 id="加入所需的依赖"><a href="#加入所需的依赖" class="headerlink" title="加入所需的依赖"></a>加入所需的依赖</h4><p><img src="/images/SpringBoot/SpringBoot2.bmp" alt></p>
+<p>构建SpringBoot项目需要继承父项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Inherit defaults from Spring Boot --&gt;</span><br><span class="line">&lt;parent&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;2.1.4.RELEASE&lt;/version&gt;</span><br><span class="line">&lt;/parent&gt;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- SpringBoot启动器 --&gt;</span><br><span class="line">&lt;!-- Add typical dependencies for a web application --&gt;</span><br><span class="line">&lt;dependencies&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 修改JDK版本 --&gt;</span><br><span class="line">&lt;properties&gt;</span><br><span class="line">	&lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">&lt;/properties&gt;</span><br></pre></td></tr></table></figure>
 <p>SprigBoot2.0以上要求jdk版本在1.8及以上</p>
@@ -518,7 +520,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
