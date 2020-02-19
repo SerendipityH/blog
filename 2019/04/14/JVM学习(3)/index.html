@@ -68,18 +68,20 @@
 
 
 
+  <link rel="alternate" href="/blog/atom.xml" title="雅俗共赏" type="application/atom+xml">
 
 
 
 
 
-<meta name="description" content="Java中都有哪些引用类型Java中有四种引用类型：强引用、软引用、弱引用、虚引用 强引用　　在Java中最常见的就是强引用，把一个对象赋给一个引用变量，这个引用变量就是一个强引用。当一个对象被强引用变量引用时，它处于可达状态，它是不可能被垃圾回收机制回收的，即使该对象以后永远都不会被用到JVM也不会回收。因此强引用是造成Java内存泄漏的主要原因之一。 软引用　　软引用需要用SoftRefere">
+
+<meta name="description" content="Java中都有哪些引用类型 Java中有四种引用类型：强引用、软引用、弱引用、虚引用 强引用 在Java中最常见的就是强引用，把一个对象赋给一个引用变量，这个引用变量就是一个强引用。当一个对象被强引用变量引用时，它处于可达状态，它是不可能被垃圾回收机制回收的，即使该对象以后永远都不会被用到JVM也不会回收。因此强引用是造成Java内存泄漏的主要原因之一。 软引用 软引用需要用SoftReferen">
 <meta name="keywords" content="Java篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM学习（3）">
 <meta property="og:url" content="http://yoursite.com/blog/2019/04/14/JVM学习(3)/index.html">
 <meta property="og:site_name" content="雅俗共赏">
-<meta property="og:description" content="Java中都有哪些引用类型Java中有四种引用类型：强引用、软引用、弱引用、虚引用 强引用　　在Java中最常见的就是强引用，把一个对象赋给一个引用变量，这个引用变量就是一个强引用。当一个对象被强引用变量引用时，它处于可达状态，它是不可能被垃圾回收机制回收的，即使该对象以后永远都不会被用到JVM也不会回收。因此强引用是造成Java内存泄漏的主要原因之一。 软引用　　软引用需要用SoftRefere">
+<meta property="og:description" content="Java中都有哪些引用类型 Java中有四种引用类型：强引用、软引用、弱引用、虚引用 强引用 在Java中最常见的就是强引用，把一个对象赋给一个引用变量，这个引用变量就是一个强引用。当一个对象被强引用变量引用时，它处于可达状态，它是不可能被垃圾回收机制回收的，即使该对象以后永远都不会被用到JVM也不会回收。因此强引用是造成Java内存泄漏的主要原因之一。 软引用 软引用需要用SoftReferen">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/java/jvm/jvm2.bmp">
 <meta property="og:image" content="http://yoursite.com/images/java/jvm/jvm3.bmp">
@@ -93,7 +95,7 @@
 <meta property="og:updated_time" content="2019-05-15T15:06:05.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM学习（3）">
-<meta name="twitter:description" content="Java中都有哪些引用类型Java中有四种引用类型：强引用、软引用、弱引用、虚引用 强引用　　在Java中最常见的就是强引用，把一个对象赋给一个引用变量，这个引用变量就是一个强引用。当一个对象被强引用变量引用时，它处于可达状态，它是不可能被垃圾回收机制回收的，即使该对象以后永远都不会被用到JVM也不会回收。因此强引用是造成Java内存泄漏的主要原因之一。 软引用　　软引用需要用SoftRefere">
+<meta name="twitter:description" content="Java中都有哪些引用类型 Java中有四种引用类型：强引用、软引用、弱引用、虚引用 强引用 在Java中最常见的就是强引用，把一个对象赋给一个引用变量，这个引用变量就是一个强引用。当一个对象被强引用变量引用时，它处于可达状态，它是不可能被垃圾回收机制回收的，即使该对象以后永远都不会被用到JVM也不会回收。因此强引用是造成Java内存泄漏的主要原因之一。 软引用 软引用需要用SoftReferen">
 <meta name="twitter:image" content="http://yoursite.com/images/java/jvm/jvm2.bmp">
 
 
@@ -385,27 +387,93 @@
       
 
       
-        <h3 id="Java中都有哪些引用类型"><a href="#Java中都有哪些引用类型" class="headerlink" title="Java中都有哪些引用类型"></a>Java中都有哪些引用类型</h3><p>Java中有四种引用类型：强引用、软引用、弱引用、虚引用</p>
-<h4 id="强引用"><a href="#强引用" class="headerlink" title="强引用"></a>强引用</h4><p>　　在Java中最常见的就是强引用，把一个对象赋给一个引用变量，这个引用变量就是一个强引用。当一个对象被强引用变量引用时，它处于可达状态，它是不可能被垃圾回收机制回收的，即使该对象以后永远都不会被用到JVM也不会回收。因此强引用是造成Java内存泄漏的主要原因之一。</p>
-<h4 id="软引用"><a href="#软引用" class="headerlink" title="软引用"></a>软引用</h4><p>　　软引用需要用SoftReference类来实现，对于只有软引用的对象来说，当系统内存足够时它不会被回收，当系统内存空间不足时它会被回收。软引用通常用在对内存敏感的程序中。</p>
-<h4 id="弱引用"><a href="#弱引用" class="headerlink" title="弱引用"></a>弱引用</h4><p>　　弱引用需要用WeakReference类来实现，它比软引用的生存期更短，对于只有弱引用的对象来说，只要垃圾回收机制一运行，不管JVM的内存空间是否足够，总会回收该对象占用的内存。</p>
-<h4 id="虚引用"><a href="#虚引用" class="headerlink" title="虚引用"></a>虚引用</h4><p>　　虚引用需要PhantomReference类来实现，它不能单独使用，必须和引用队列联合使用。虚引用的主要作用是跟踪对象被垃圾回收的状态。</p>
-<h3 id="jvm的垃圾回收算法"><a href="#jvm的垃圾回收算法" class="headerlink" title="jvm的垃圾回收算法"></a>jvm的垃圾回收算法</h3><h4 id="标记清除算法（Mark-Sweep）"><a href="#标记清除算法（Mark-Sweep）" class="headerlink" title="标记清除算法（Mark-Sweep）"></a>标记清除算法（Mark-Sweep）</h4><p>　　最基础的垃圾回收算法，分为两个阶段，标注和清除。标记阶段标记出所有需要回收的对象，清除阶段回收被标记的对象所占用的空间。如图<br><img src="/images/java/jvm/jvm2.bmp" alt><br>　　从图中我们就可以发现，该算法最大的问题是内存碎片化严重，后续可能发生大对象不能找到可利用空间的问题。</p>
-<h4 id="复制算法-copying"><a href="#复制算法-copying" class="headerlink" title="复制算法(copying)"></a>复制算法(copying)</h4><p>　　为了解决Mark-Sweep算法内存碎片化的缺陷而被提出的算法。按内存容量将内存划分为等大小的两块。每次只使用其中一块，当这一块内存满后将尚存活的对象复制到另一块上去，把已使用的内存清掉，如图：<br><img src="/images/java/jvm/jvm3.bmp" alt><br>　　这种算法虽然实现简单，内存效率高，不易产生碎片，但是最大的问题是可用内存被压缩到了原本的一半。且存活对象增多的话，Copying算法的效率会大大降低。</p>
-<h4 id="标记整理算法-Mark-Compact"><a href="#标记整理算法-Mark-Compact" class="headerlink" title="标记整理算法(Mark-Compact)"></a>标记整理算法(Mark-Compact)</h4><p>　　结合了以上两个算法，为了避免缺陷而提出。标记阶段和Mark-Sweep算法相同，标记后不是清理对象，而是将存活对象移向内存的一端。然后清除端边界外的对象。如图：<br><img src="/images/java/jvm/jvm4.bmp" alt></p>
-<h4 id="分代收集算法"><a href="#分代收集算法" class="headerlink" title="分代收集算法"></a>分代收集算法</h4><p>　　分代收集法是目前大部分JVM所采用的方法，其核心思想是根据对象存活的不同生命周期将内存划分为不同的域，一般情况下将GC堆划分为老生代(Tenured/Old Generation)和新生代(Young Generation)。老生代的特点是每次垃圾回收时只有少量对象需要被回收，新生代的特点是每次垃圾回收时都有大量垃圾需要被回收，因此可以根据不同区域选择不同的算法。<br>　　目前大部分JVM的GC对于新生代都采取Copying算法，因为新生代中每次垃圾回收都要回收大部分对象，即要复制的操作比较少，但通常并不是按照1：1来划分新生代。一般将新生代划分为一块较大的Eden空间和两个较小的Survivor空间(From Space, To Space)，每次使用Eden空间和其中的一块Survivor空间，当进行回收时，将该两块空间中还存活的对象复制到另一块Survivor空间中。<br><img src="/images/java/jvm/jvm5.bmp" alt><br>　　而老生代因为每次只回收少量对象，因而采用Mark-Compact算法。另外，不要忘记在Java基础：Java虚拟机(JVM)中提到过的处于方法区的永生代(Permanet Generation)。它用来存储class类，常量，方法描述等。对永生代的回收主要包括废弃常量和无用的类。对象的内存分配主要在新生代的Eden Space和Survivor Space的From Space(Survivor目前存放对象的那一块)，少数情况会直接分配到老生代。当新生代的Eden Space和From Space空间不足时就会发生一次GC，进行GC后，Eden Space和From Space区的存活对象会被挪到To Space，然后将Eden Space和From Space进行清理。如果To Space无法足够存储某个对象，则将这个对象存储到老生代。在进行GC后，使用的便是Eden Space和To Space了，如此反复循环。当对象在Survivor区躲过一次GC后，其年龄就会+1。默认情况下年龄到达15的对象会被移到老生代中。</p>
-<h3 id="jvm垃圾收集器"><a href="#jvm垃圾收集器" class="headerlink" title="jvm垃圾收集器"></a>jvm垃圾收集器</h3><p>　　Java堆内存被划分为新生代和年老代两部分，新生代主要使用复制和标记-清除垃圾回收算法，年老代主要使用标记-整理垃圾回收算法，因此java虚拟中针对新生代和年老代分别提供了多种不同的垃圾收集器<br><img src="/images/java/jvm/jvm6.bmp" alt></p>
-<h4 id="Serial垃圾收集器"><a href="#Serial垃圾收集器" class="headerlink" title="Serial垃圾收集器"></a>Serial垃圾收集器</h4><p>　　Serial是最基本垃圾收集器，使用复制算法，曾经是JDK1.3.1之前新生代唯一的垃圾收集器。Serial是一个单线程的收集器，它不仅仅只会使用一个CPU或一条线程去完成垃圾收集工作，并且在进行垃圾收集的同时，必须暂停其他所有的工作线程，直到垃圾收集结束。<br>　　Serial垃圾收集器虽然在收集垃圾过程中需要暂停所有其他的工作线程，但是它简单高效，对于限定单个CPU环境来说，没有线程交互的开销，可以获得最高的单线程垃圾收集效率，因此Serial垃圾收集器依然是java虚拟机运行在Client模式下默认的新生代垃圾收集器。</p>
-<h4 id="ParNew垃圾收集器"><a href="#ParNew垃圾收集器" class="headerlink" title="ParNew垃圾收集器"></a>ParNew垃圾收集器</h4><p>　　ParNew垃圾收集器其实是Serial收集器的多线程版本，也使用复制算法，除了使用多线程进行垃圾收集之外，其余的行为和Serial收集器完全一样，ParNew垃圾收集器在垃圾收集过程中同样也要暂停所有其他的工作线程。<br>　　ParNew收集器默认开启和CPU数目相同的线程数，可以通过-XX:ParallelGCThreads参数来限制垃圾收集器的线程数。<br>　　ParNew虽然是除了多线程外和Serial收集器几乎完全一样，但是ParNew垃圾收集器是很多java虚拟机运行在Server模式下新生代的默认垃圾收集器。</p>
-<h4 id="Parallel-Scavenge收集器"><a href="#Parallel-Scavenge收集器" class="headerlink" title="Parallel Scavenge收集器"></a>Parallel Scavenge收集器</h4><p>　　Parallel Scavenge收集器也是一个新生代垃圾收集器，同样使用复制算法，也是一个多线程的垃圾收集器，它重点关注的是程序达到一个可控制的吞吐量（Thoughput，CPU用于运行用户代码的时间/CPU总消耗时间，即吞吐量=运行用户代码时间/(运行用户代码时间+垃圾收集时间)），高吞吐量可以最高效率地利用CPU时间，尽快地完成程序的运算任务，主要适用于在后台运算而不需要太多交互的任务。自适应调节策略也是ParallelScavenge收集器与ParNew收集器的一个重要区别。</p>
-<h4 id="Serial-Old收集器"><a href="#Serial-Old收集器" class="headerlink" title="Serial Old收集器"></a>Serial Old收集器</h4><p>　　Serial Old是Serial垃圾收集器年老代版本，它同样是个单线程的收集器，使用标记-整理算法，这个收集器也主要是运行在Client默认的java虚拟机默认的年老代垃圾收集器。<br>　　在Server模式下，主要有两个用途：<br>　　1. 在JDK1.5之前版本中与新生代的Parallel Scavenge收集器搭配使用。<br>　　2. 作为年老代中使用CMS收集器的后备垃圾收集方案。</p>
-<p>　　新生代Serial与年老代Serial Old搭配垃圾收集过程图：<br><img src="/images/java/jvm/jvm7.bmp" alt></p>
-<p>　　新生代Parallel Scavenge收集器与ParNew收集器工作原理类似，都是多线程的收集器，都使用的是复制算法，在垃圾收集过程中都需要暂停所有的工作线程。<br>　　新生代Parallel Scavenge/ParNew与年老代Serial Old搭配垃圾收集过程图：<br><img src="/images/java/jvm/jvm8.bmp" alt></p>
-<h4 id="Parallel-Old收集器"><a href="#Parallel-Old收集器" class="headerlink" title="Parallel Old收集器"></a>Parallel Old收集器</h4><p>　　Parallel Old收集器是Parallel Scavenge的年老代版本，使用多线程的标记-整理算法，在JDK1.6才开始提供。<br>　　在JDK1.6之前，新生代使用ParallelScavenge收集器只能搭配年老代的Serial Old收集器，只能保证新生代的吞吐量优先，无法保证整体的吞吐量，Parallel Old正是为了在年老代同样提供吞吐量优先的垃圾收集器，如果系统对吞吐量要求比较高，可以优先考虑新生代Parallel Scavenge和年老代Parallel Old收集器的搭配策略。<br>　　新生代Parallel Scavenge和年老代Parallel Old收集器搭配运行过程图：<br><img src="/images/java/jvm/jvm9.bmp" alt></p>
-<h4 id="CMS收集器"><a href="#CMS收集器" class="headerlink" title="CMS收集器"></a>CMS收集器</h4><p>　　Concurrent mark sweep(CMS)收集器是一种年老代垃圾收集器，其最主要目标是获取最短垃圾回收停顿时间，和其他年老代使用标记-整理算法不同，它使用多线程的标记-清除算法。 最短的垃圾收集停顿时间可以为交互比较高的程序提高用户体验。<br>　　CMS工作机制相比其他的垃圾收集器来说更复杂，整个过程分为以下4个阶段：<br>　　1. 初始标记：只是标记一下GC Roots能直接关联的对象，速度很快，仍然需要暂停所有的工作线程。<br>　　2. 并发标记：进行GC Roots跟踪的过程，和用户线程一起工作，不需要暂停工作线程。<br>　　3. 重新标记：为了修正在并发标记期间，因用户程序继续运行而导致标记产生变动的那一部分对象的标记记录，仍然需要暂停所有的工作线程。<br>　　4. 并发清除：清除GC Roots不可达对象，和用户线程一起工作，不需要暂停工作线程。由于耗时最长的并发标记和并发清除过程中，垃圾收集线程可以和用户现在一起并发工作，所以总体上来看CMS收集器的内存回收和用户线程是一起并发地执行。<br>　　CMS收集器工作过程：<br><img src="/images/java/jvm/jvm10.bmp" alt></p>
-<h4 id="G1收集器"><a href="#G1收集器" class="headerlink" title="G1收集器"></a>G1收集器</h4><p>　　Garbage first垃圾收集器是目前垃圾收集器理论发展的最前沿成果，相比与CMS收集器，G1收集器两个最突出的改进是：<br>　　1. 基于标记-整理算法，不产生内存碎片。<br>　　2. 可以非常精确控制停顿时间，在不牺牲吞吐量前提下，实现低停顿垃圾回收。 G1收集器避免全区域垃圾收集，它把堆内存划分为大小固定的几个独立区域，并且跟踪这些区域的垃圾收集进度，同时在后台维护一个优先级列表，每次根据所允许的收集时间，优先回收垃圾最多的区域。区域划分和优先级区域回收机制，确保G1收集器可以在有限时间获得最高的垃圾收集效率。</p>
+        <h3 id="Java中都有哪些引用类型">Java中都有哪些引用类型</h3>
+<p>Java中有四种引用类型：强引用、软引用、弱引用、虚引用</p>
+<h4 id="强引用">强引用</h4>
+<p>在Java中最常见的就是强引用，把一个对象赋给一个引用变量，这个引用变量就是一个强引用。当一个对象被强引用变量引用时，它处于可达状态，它是不可能被垃圾回收机制回收的，即使该对象以后永远都不会被用到JVM也不会回收。因此强引用是造成Java内存泄漏的主要原因之一。</p>
+<h4 id="软引用">软引用</h4>
+<p>软引用需要用SoftReference类来实现，对于只有软引用的对象来说，当系统内存足够时它不会被回收，当系统内存空间不足时它会被回收。软引用通常用在对内存敏感的程序中。</p>
+<h4 id="弱引用">弱引用</h4>
+<p>弱引用需要用WeakReference类来实现，它比软引用的生存期更短，对于只有弱引用的对象来说，只要垃圾回收机制一运行，不管JVM的内存空间是否足够，总会回收该对象占用的内存。</p>
+<h4 id="虚引用">虚引用</h4>
+<p>虚引用需要PhantomReference类来实现，它不能单独使用，必须和引用队列联合使用。虚引用的主要作用是跟踪对象被垃圾回收的状态。</p>
+<h3 id="jvm的垃圾回收算法">jvm的垃圾回收算法</h3>
+<h4 id="标记清除算法（Mark-Sweep）">标记清除算法（Mark-Sweep）</h4>
+<p>最基础的垃圾回收算法，分为两个阶段，标注和清除。标记阶段标记出所有需要回收的对象，清除阶段回收被标记的对象所占用的空间。如图<br>
+<img src="/images/java/jvm/jvm2.bmp" alt><br>
+　　从图中我们就可以发现，该算法最大的问题是内存碎片化严重，后续可能发生大对象不能找到可利用空间的问题。</p>
+<h4 id="复制算法-copying">复制算法(copying)</h4>
+<p>为了解决Mark-Sweep算法内存碎片化的缺陷而被提出的算法。按内存容量将内存划分为等大小的两块。每次只使用其中一块，当这一块内存满后将尚存活的对象复制到另一块上去，把已使用的内存清掉，如图：<br>
+<img src="/images/java/jvm/jvm3.bmp" alt><br>
+　　这种算法虽然实现简单，内存效率高，不易产生碎片，但是最大的问题是可用内存被压缩到了原本的一半。且存活对象增多的话，Copying算法的效率会大大降低。</p>
+<h4 id="标记整理算法-Mark-Compact">标记整理算法(Mark-Compact)</h4>
+<p>结合了以上两个算法，为了避免缺陷而提出。标记阶段和Mark-Sweep算法相同，标记后不是清理对象，而是将存活对象移向内存的一端。然后清除端边界外的对象。如图：<br>
+<img src="/images/java/jvm/jvm4.bmp" alt></p>
+<h4 id="分代收集算法">分代收集算法</h4>
+<p>分代收集法是目前大部分JVM所采用的方法，其核心思想是根据对象存活的不同生命周期将内存划分为不同的域，一般情况下将GC堆划分为老生代(Tenured/Old Generation)和新生代(Young Generation)。老生代的特点是每次垃圾回收时只有少量对象需要被回收，新生代的特点是每次垃圾回收时都有大量垃圾需要被回收，因此可以根据不同区域选择不同的算法。<br>
+　　目前大部分JVM的GC对于新生代都采取Copying算法，因为新生代中每次垃圾回收都要回收大部分对象，即要复制的操作比较少，但通常并不是按照1：1来划分新生代。一般将新生代划分为一块较大的Eden空间和两个较小的Survivor空间(From Space, To Space)，每次使用Eden空间和其中的一块Survivor空间，当进行回收时，将该两块空间中还存活的对象复制到另一块Survivor空间中。<br>
+<img src="/images/java/jvm/jvm5.bmp" alt><br>
+　　而老生代因为每次只回收少量对象，因而采用Mark-Compact算法。另外，不要忘记在Java基础：Java虚拟机(JVM)中提到过的处于方法区的永生代(Permanet Generation)。它用来存储class类，常量，方法描述等。对永生代的回收主要包括废弃常量和无用的类。对象的内存分配主要在新生代的Eden Space和Survivor Space的From Space(Survivor目前存放对象的那一块)，少数情况会直接分配到老生代。当新生代的Eden Space和From Space空间不足时就会发生一次GC，进行GC后，Eden Space和From Space区的存活对象会被挪到To Space，然后将Eden Space和From Space进行清理。如果To Space无法足够存储某个对象，则将这个对象存储到老生代。在进行GC后，使用的便是Eden Space和To Space了，如此反复循环。当对象在Survivor区躲过一次GC后，其年龄就会+1。默认情况下年龄到达15的对象会被移到老生代中。</p>
+<h3 id="jvm垃圾收集器">jvm垃圾收集器</h3>
+<p>Java堆内存被划分为新生代和年老代两部分，新生代主要使用复制和标记-清除垃圾回收算法，年老代主要使用标记-整理垃圾回收算法，因此java虚拟中针对新生代和年老代分别提供了多种不同的垃圾收集器<br>
+<img src="/images/java/jvm/jvm6.bmp" alt></p>
+<h4 id="Serial垃圾收集器">Serial垃圾收集器</h4>
+<p>Serial是最基本垃圾收集器，使用复制算法，曾经是JDK1.3.1之前新生代唯一的垃圾收集器。Serial是一个单线程的收集器，它不仅仅只会使用一个CPU或一条线程去完成垃圾收集工作，并且在进行垃圾收集的同时，必须暂停其他所有的工作线程，直到垃圾收集结束。<br>
+　　Serial垃圾收集器虽然在收集垃圾过程中需要暂停所有其他的工作线程，但是它简单高效，对于限定单个CPU环境来说，没有线程交互的开销，可以获得最高的单线程垃圾收集效率，因此Serial垃圾收集器依然是java虚拟机运行在Client模式下默认的新生代垃圾收集器。</p>
+<h4 id="ParNew垃圾收集器">ParNew垃圾收集器</h4>
+<p>ParNew垃圾收集器其实是Serial收集器的多线程版本，也使用复制算法，除了使用多线程进行垃圾收集之外，其余的行为和Serial收集器完全一样，ParNew垃圾收集器在垃圾收集过程中同样也要暂停所有其他的工作线程。<br>
+　　ParNew收集器默认开启和CPU数目相同的线程数，可以通过-XX:ParallelGCThreads参数来限制垃圾收集器的线程数。<br>
+　　ParNew虽然是除了多线程外和Serial收集器几乎完全一样，但是ParNew垃圾收集器是很多java虚拟机运行在Server模式下新生代的默认垃圾收集器。</p>
+<h4 id="Parallel-Scavenge收集器">Parallel Scavenge收集器</h4>
+<p>Parallel Scavenge收集器也是一个新生代垃圾收集器，同样使用复制算法，也是一个多线程的垃圾收集器，它重点关注的是程序达到一个可控制的吞吐量（Thoughput，CPU用于运行用户代码的时间/CPU总消耗时间，即吞吐量=运行用户代码时间/(运行用户代码时间+垃圾收集时间)），高吞吐量可以最高效率地利用CPU时间，尽快地完成程序的运算任务，主要适用于在后台运算而不需要太多交互的任务。自适应调节策略也是ParallelScavenge收集器与ParNew收集器的一个重要区别。</p>
+<h4 id="Serial-Old收集器">Serial Old收集器</h4>
+<p>Serial Old是Serial垃圾收集器年老代版本，它同样是个单线程的收集器，使用标记-整理算法，这个收集器也主要是运行在Client默认的java虚拟机默认的年老代垃圾收集器。<br>
+　　在Server模式下，主要有两个用途：<br>
+　　1. 在JDK1.5之前版本中与新生代的Parallel Scavenge收集器搭配使用。<br>
+　　2. 作为年老代中使用CMS收集器的后备垃圾收集方案。</p>
+<p>新生代Serial与年老代Serial Old搭配垃圾收集过程图：<br>
+<img src="/images/java/jvm/jvm7.bmp" alt></p>
+<p>新生代Parallel Scavenge收集器与ParNew收集器工作原理类似，都是多线程的收集器，都使用的是复制算法，在垃圾收集过程中都需要暂停所有的工作线程。<br>
+　　新生代Parallel Scavenge/ParNew与年老代Serial Old搭配垃圾收集过程图：<br>
+<img src="/images/java/jvm/jvm8.bmp" alt></p>
+<h4 id="Parallel-Old收集器">Parallel Old收集器</h4>
+<p>Parallel Old收集器是Parallel Scavenge的年老代版本，使用多线程的标记-整理算法，在JDK1.6才开始提供。<br>
+　　在JDK1.6之前，新生代使用ParallelScavenge收集器只能搭配年老代的Serial Old收集器，只能保证新生代的吞吐量优先，无法保证整体的吞吐量，Parallel Old正是为了在年老代同样提供吞吐量优先的垃圾收集器，如果系统对吞吐量要求比较高，可以优先考虑新生代Parallel Scavenge和年老代Parallel Old收集器的搭配策略。<br>
+　　新生代Parallel Scavenge和年老代Parallel Old收集器搭配运行过程图：<br>
+<img src="/images/java/jvm/jvm9.bmp" alt></p>
+<h4 id="CMS收集器">CMS收集器</h4>
+<p>Concurrent mark sweep(CMS)收集器是一种年老代垃圾收集器，其最主要目标是获取最短垃圾回收停顿时间，和其他年老代使用标记-整理算法不同，它使用多线程的标记-清除算法。 最短的垃圾收集停顿时间可以为交互比较高的程序提高用户体验。<br>
+　　CMS工作机制相比其他的垃圾收集器来说更复杂，整个过程分为以下4个阶段：<br>
+　　1. 初始标记：只是标记一下GC Roots能直接关联的对象，速度很快，仍然需要暂停所有的工作线程。<br>
+　　2. 并发标记：进行GC Roots跟踪的过程，和用户线程一起工作，不需要暂停工作线程。<br>
+　　3. 重新标记：为了修正在并发标记期间，因用户程序继续运行而导致标记产生变动的那一部分对象的标记记录，仍然需要暂停所有的工作线程。<br>
+　　4. 并发清除：清除GC Roots不可达对象，和用户线程一起工作，不需要暂停工作线程。由于耗时最长的并发标记和并发清除过程中，垃圾收集线程可以和用户现在一起并发工作，所以总体上来看CMS收集器的内存回收和用户线程是一起并发地执行。<br>
+　　CMS收集器工作过程：<br>
+<img src="/images/java/jvm/jvm10.bmp" alt></p>
+<h4 id="G1收集器">G1收集器</h4>
+<p>Garbage first垃圾收集器是目前垃圾收集器理论发展的最前沿成果，相比与CMS收集器，G1收集器两个最突出的改进是：<br>
+　　1. 基于标记-整理算法，不产生内存碎片。<br>
+　　2. 可以非常精确控制停顿时间，在不牺牲吞吐量前提下，实现低停顿垃圾回收。 G1收集器避免全区域垃圾收集，它把堆内存划分为大小固定的几个独立区域，并且跟踪这些区域的垃圾收集进度，同时在后台维护一个优先级列表，每次根据所允许的收集时间，优先回收垃圾最多的区域。区域划分和优先级区域回收机制，确保G1收集器可以在有限时间获得最高的垃圾收集效率。</p>
 <p>参考资料：Java架构师知识点整理</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     
@@ -534,7 +602,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -545,7 +613,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -556,7 +624,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -564,6 +632,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -625,7 +700,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

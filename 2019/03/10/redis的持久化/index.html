@@ -68,25 +68,27 @@
 
 
 
+  <link rel="alternate" href="/blog/atom.xml" title="雅俗共赏" type="application/atom+xml">
 
 
 
 
 
-<meta name="description" content="Redis的所有数据都是保存到内存中的。 Rdb：快照形式，定期把内存中当前时刻的数据保存到磁盘。Redis默认支持的持久化方案。可根据情况自己配置 aof形式：append only file。把所有对redis数据库操作的命令，增删改操作的命令。保存到文件中。数据库恢复时把所有的命令执行一遍即可。aof形式的完整性更高一些，appendfsync everysec 为每秒存一次，但会影响red">
+
+<meta name="description" content="Redis的所有数据都是保存到内存中的。 Rdb：快照形式，定期把内存中当前时刻的数据保存到磁盘。Redis默认支持的持久化方案。 可根据情况自己配置  aof形式：append only file。 把所有对redis数据库操作的命令，增删改操作的命令。保存到文件中。数据库恢复时把所有的命令执行一遍即可。 aof形式的完整性更高一些，appendfsync everysec 为每秒存一次，但会影">
 <meta name="keywords" content="redis的持久化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="redis的持久化">
 <meta property="og:url" content="http://yoursite.com/blog/2019/03/10/redis的持久化/index.html">
 <meta property="og:site_name" content="雅俗共赏">
-<meta property="og:description" content="Redis的所有数据都是保存到内存中的。 Rdb：快照形式，定期把内存中当前时刻的数据保存到磁盘。Redis默认支持的持久化方案。可根据情况自己配置 aof形式：append only file。把所有对redis数据库操作的命令，增删改操作的命令。保存到文件中。数据库恢复时把所有的命令执行一遍即可。aof形式的完整性更高一些，appendfsync everysec 为每秒存一次，但会影响red">
+<meta property="og:description" content="Redis的所有数据都是保存到内存中的。 Rdb：快照形式，定期把内存中当前时刻的数据保存到磁盘。Redis默认支持的持久化方案。 可根据情况自己配置  aof形式：append only file。 把所有对redis数据库操作的命令，增删改操作的命令。保存到文件中。数据库恢复时把所有的命令执行一遍即可。 aof形式的完整性更高一些，appendfsync everysec 为每秒存一次，但会影">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/redis/redis4.bmp">
 <meta property="og:image" content="http://yoursite.com/images/redis/redis5.bmp">
 <meta property="og:updated_time" content="2019-05-15T15:07:16.443Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis的持久化">
-<meta name="twitter:description" content="Redis的所有数据都是保存到内存中的。 Rdb：快照形式，定期把内存中当前时刻的数据保存到磁盘。Redis默认支持的持久化方案。可根据情况自己配置 aof形式：append only file。把所有对redis数据库操作的命令，增删改操作的命令。保存到文件中。数据库恢复时把所有的命令执行一遍即可。aof形式的完整性更高一些，appendfsync everysec 为每秒存一次，但会影响red">
+<meta name="twitter:description" content="Redis的所有数据都是保存到内存中的。 Rdb：快照形式，定期把内存中当前时刻的数据保存到磁盘。Redis默认支持的持久化方案。 可根据情况自己配置  aof形式：append only file。 把所有对redis数据库操作的命令，增删改操作的命令。保存到文件中。数据库恢复时把所有的命令执行一遍即可。 aof形式的完整性更高一些，appendfsync everysec 为每秒存一次，但会影">
 <meta name="twitter:image" content="http://yoursite.com/images/redis/redis4.bmp">
 
 
@@ -353,7 +355,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  166
+                  218
                 </span>
               
 
@@ -379,10 +381,34 @@
 
       
         <p>Redis的所有数据都是保存到内存中的。</p>
-<h6 id="Rdb：快照形式，定期把内存中当前时刻的数据保存到磁盘。Redis默认支持的持久化方案。"><a href="#Rdb：快照形式，定期把内存中当前时刻的数据保存到磁盘。Redis默认支持的持久化方案。" class="headerlink" title="Rdb：快照形式，定期把内存中当前时刻的数据保存到磁盘。Redis默认支持的持久化方案。"></a>Rdb：快照形式，定期把内存中当前时刻的数据保存到磁盘。Redis默认支持的持久化方案。</h6><p>可根据情况自己配置<br><img src="/images/redis/redis4.bmp" alt></p>
-<h6 id="aof形式：append-only-file。"><a href="#aof形式：append-only-file。" class="headerlink" title="aof形式：append only file。"></a>aof形式：append only file。</h6><p>把所有对redis数据库操作的命令，增删改操作的命令。保存到文件中。数据库恢复时把所有的命令执行一遍即可。<br>aof形式的完整性更高一些，appendfsync everysec 为每秒存一次，但会影响redis的性能。<br><img src="/images/redis/redis5.bmp" alt><br>appendonly no改为yes开启aof形式</p>
+<h6 id="Rdb：快照形式，定期把内存中当前时刻的数据保存到磁盘。Redis默认支持的持久化方案。">Rdb：快照形式，定期把内存中当前时刻的数据保存到磁盘。Redis默认支持的持久化方案。</h6>
+<p>可根据情况自己配置<br>
+<img src="/images/redis/redis4.bmp" alt></p>
+<h6 id="aof形式：append-only-file。">aof形式：append only file。</h6>
+<p>把所有对redis数据库操作的命令，增删改操作的命令。保存到文件中。数据库恢复时把所有的命令执行一遍即可。<br>
+aof形式的完整性更高一些，appendfsync everysec 为每秒存一次，但会影响redis的性能。<br>
+<img src="/images/redis/redis5.bmp" alt><br>
+appendonly no改为yes开启aof形式</p>
 <p>两种持久化方案同时开启使用aof文件来恢复数据库。</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     
@@ -511,7 +537,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -522,7 +548,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -533,7 +559,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -541,6 +567,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -602,7 +635,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

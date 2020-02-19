@@ -68,6 +68,8 @@
 
 
 
+  <link rel="alternate" href="/blog/atom.xml" title="雅俗共赏" type="application/atom+xml">
+
 
 
 
@@ -352,7 +354,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  756
+                  799
                 </span>
               
 
@@ -377,18 +379,50 @@
       
 
       
-        <h1 id="Eureka-服务注册中心"><a href="#Eureka-服务注册中心" class="headerlink" title="Eureka 服务注册中心"></a>Eureka 服务注册中心</h1><a id="more"></a>
-<h2 id="什么服务注册中心"><a href="#什么服务注册中心" class="headerlink" title="什么服务注册中心"></a>什么服务注册中心</h2><p>　　服务注册中心是服务实现服务化管理的核心组件,类似于目录服务的作用,主要用来存储服务信息，譬如提供者url 串、路由信息等。服务注册中心是SOA 架构中最基础的设施之一。</p>
-<h3 id="1-什么是Eureka注册中心"><a href="#1-什么是Eureka注册中心" class="headerlink" title="1.什么是Eureka注册中心"></a>1.什么是Eureka注册中心</h3><p>　　Eureka 是Netflix 开发的服务发现组件，本身是一个基于REST 的服务。Spring Cloud将它集成在其子项目spring-cloud-netflix 中，以实现Spring Cloud 的服务注册于发现，同时还提供了负载均衡、故障转移等能力。</p>
-<h3 id="2-Eureka注册中心三种角色"><a href="#2-Eureka注册中心三种角色" class="headerlink" title="2.Eureka注册中心三种角色"></a>2.Eureka注册中心三种角色</h3><h4 id="Eureka-Server"><a href="#Eureka-Server" class="headerlink" title="Eureka Server"></a>Eureka Server</h4><p>通过Register、Get、Renew 等接口提供服务的注册和发现。</p>
-<h4 id="Application-Service-Service-Provider"><a href="#Application-Service-Service-Provider" class="headerlink" title="Application Service (Service Provider)"></a>Application Service (Service Provider)</h4><p>服务提供方<br>把自身的服务实例注册到Eureka Server 中</p>
-<h4 id="Application-Client-Service-Consumer"><a href="#Application-Client-Service-Consumer" class="headerlink" title="Application Client (Service Consumer)"></a>Application Client (Service Consumer)</h4><p>服务调用方<br>通过Eureka Server 获取服务列表，消费服务。</p>
-<h2 id="Eureka入门案例"><a href="#Eureka入门案例" class="headerlink" title="Eureka入门案例"></a>Eureka入门案例</h2><h3 id="创建maven项目，在pom文件中添加依赖"><a href="#创建maven项目，在pom文件中添加依赖" class="headerlink" title="创建maven项目，在pom文件中添加依赖"></a>创建maven项目，在pom文件中添加依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;</span><br><span class="line">	xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">	xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">	&lt;parent&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;1.5.13.RELEASE&lt;/version&gt;</span><br><span class="line">		&lt;relativePath /&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">	&lt;/parent&gt;</span><br><span class="line">	&lt;groupId&gt;com.serendipity&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;springcloud-eureka-server&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">	&lt;name&gt;springcloud-eureka-server&lt;/name&gt;</span><br><span class="line">	&lt;description&gt;Demo project for Spring Boot&lt;/description&gt;</span><br><span class="line"></span><br><span class="line">	&lt;properties&gt;</span><br><span class="line">		&lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">	&lt;/properties&gt;</span><br><span class="line">	&lt;dependencyManagement&gt;</span><br><span class="line">		&lt;dependencies&gt;</span><br><span class="line">			&lt;dependency&gt;</span><br><span class="line">				&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">				&lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;</span><br><span class="line">				&lt;version&gt;Dalston.SR5&lt;/version&gt;</span><br><span class="line">				&lt;type&gt;pom&lt;/type&gt;</span><br><span class="line">				&lt;scope&gt;import&lt;/scope&gt;</span><br><span class="line">			&lt;/dependency&gt;</span><br><span class="line">		&lt;/dependencies&gt;</span><br><span class="line">	&lt;/dependencyManagement&gt;</span><br><span class="line">	&lt;dependencies&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">			&lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-cloud-starter-config&lt;/artifactId&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-cloud-starter-eureka-server&lt;/artifactId&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">	&lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">	&lt;build&gt;</span><br><span class="line">		&lt;plugins&gt;</span><br><span class="line">			&lt;plugin&gt;</span><br><span class="line">				&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">				&lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">			&lt;/plugin&gt;</span><br><span class="line">		&lt;/plugins&gt;</span><br><span class="line">	&lt;/build&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="在启动类上添加注解"><a href="#在启动类上添加注解" class="headerlink" title="在启动类上添加注解"></a>在启动类上添加注解</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@EnableEurekaServer</span><br><span class="line">@SpringBootApplication</span><br><span class="line">public class EurekaApplication &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		SpringApplication.run(EurekaApplication.class, args);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="修改application-properties全局配置文件"><a href="#修改application-properties全局配置文件" class="headerlink" title="修改application.properties全局配置文件"></a>修改application.properties全局配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">spring.application.name=eureka-server</span><br><span class="line">server.port=8761</span><br><span class="line"></span><br><span class="line">#是否将自己注册到Eureka-Server,默认为true</span><br><span class="line">eureka.client.registerWithEureka=false</span><br><span class="line"></span><br><span class="line">#是否从Eureka-Server中获取服务注册信息,默认为true</span><br><span class="line">eureka.client.fetchRegistry=false</span><br></pre></td></tr></table></figure>
+        <h1>Eureka 服务注册中心</h1>
+<a id="more"></a>
+<h2 id="什么服务注册中心">什么服务注册中心</h2>
+<p>服务注册中心是服务实现服务化管理的核心组件,类似于目录服务的作用,主要用来存储服务信息，譬如提供者url 串、路由信息等。服务注册中心是SOA 架构中最基础的设施之一。</p>
+<h3 id="1-什么是Eureka注册中心">1.什么是Eureka注册中心</h3>
+<p>Eureka 是Netflix 开发的服务发现组件，本身是一个基于REST 的服务。Spring Cloud将它集成在其子项目spring-cloud-netflix 中，以实现Spring Cloud 的服务注册于发现，同时还提供了负载均衡、故障转移等能力。</p>
+<h3 id="2-Eureka注册中心三种角色">2.Eureka注册中心三种角色</h3>
+<h4 id="Eureka-Server">Eureka Server</h4>
+<p>通过Register、Get、Renew 等接口提供服务的注册和发现。</p>
+<h4 id="Application-Service-Service-Provider">Application Service (Service Provider)</h4>
+<p>服务提供方<br>
+把自身的服务实例注册到Eureka Server 中</p>
+<h4 id="Application-Client-Service-Consumer">Application Client (Service Consumer)</h4>
+<p>服务调用方<br>
+通过Eureka Server 获取服务列表，消费服务。</p>
+<h2 id="Eureka入门案例">Eureka入门案例</h2>
+<h3 id="创建maven项目，在pom文件中添加依赖">创建maven项目，在pom文件中添加依赖</h3>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line">&lt;project xmlns="http://maven.apache.org/POM/4.0.0"</span><br><span class="line">	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</span><br><span class="line">	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;</span><br><span class="line">	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">	&lt;parent&gt;</span><br><span class="line">		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;1.5.13.RELEASE&lt;/version&gt;</span><br><span class="line">		&lt;relativePath /&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">	&lt;/parent&gt;</span><br><span class="line">	&lt;groupId&gt;com.serendipity&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;springcloud-eureka-server&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">	&lt;name&gt;springcloud-eureka-server&lt;/name&gt;</span><br><span class="line">	&lt;description&gt;Demo project for Spring Boot&lt;/description&gt;</span><br><span class="line"></span><br><span class="line">	&lt;properties&gt;</span><br><span class="line">		&lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">	&lt;/properties&gt;</span><br><span class="line">	&lt;dependencyManagement&gt;</span><br><span class="line">		&lt;dependencies&gt;</span><br><span class="line">			&lt;dependency&gt;</span><br><span class="line">				&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">				&lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;</span><br><span class="line">				&lt;version&gt;Dalston.SR5&lt;/version&gt;</span><br><span class="line">				&lt;type&gt;pom&lt;/type&gt;</span><br><span class="line">				&lt;scope&gt;import&lt;/scope&gt;</span><br><span class="line">			&lt;/dependency&gt;</span><br><span class="line">		&lt;/dependencies&gt;</span><br><span class="line">	&lt;/dependencyManagement&gt;</span><br><span class="line">	&lt;dependencies&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">			&lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-cloud-starter-config&lt;/artifactId&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-cloud-starter-eureka-server&lt;/artifactId&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br><span class="line">	&lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">	&lt;build&gt;</span><br><span class="line">		&lt;plugins&gt;</span><br><span class="line">			&lt;plugin&gt;</span><br><span class="line">				&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">				&lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">			&lt;/plugin&gt;</span><br><span class="line">		&lt;/plugins&gt;</span><br><span class="line">	&lt;/build&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="在启动类上添加注解">在启动类上添加注解</h3>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@EnableEurekaServer</span><br><span class="line">@SpringBootApplication</span><br><span class="line">public class EurekaApplication {</span><br><span class="line">	public static void main(String[] args) {</span><br><span class="line">		SpringApplication.run(EurekaApplication.class, args);</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="修改application-properties全局配置文件">修改application.properties全局配置文件</h3>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">spring.application.name=eureka-server</span><br><span class="line">server.port=8761</span><br><span class="line"></span><br><span class="line">#是否将自己注册到Eureka-Server,默认为true</span><br><span class="line">eureka.client.registerWithEureka=false</span><br><span class="line"></span><br><span class="line">#是否从Eureka-Server中获取服务注册信息,默认为true</span><br><span class="line">eureka.client.fetchRegistry=false</span><br></pre></td></tr></tbody></table></figure>
 <p>如果不设为false,会在启动的时候报错</p>
-<h3 id="通过浏览器访问Eureka-Server-服务管理平台"><a href="#通过浏览器访问Eureka-Server-服务管理平台" class="headerlink" title="通过浏览器访问Eureka-Server 服务管理平台"></a>通过浏览器访问Eureka-Server 服务管理平台</h3><p><img src="/images/SpringCloud/SpringCloud1.bmp" alt></p>
-
+<h3 id="通过浏览器访问Eureka-Server-服务管理平台">通过浏览器访问Eureka-Server 服务管理平台</h3>
+<p><img src="/images/SpringCloud/SpringCloud1.bmp" alt></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     
@@ -517,7 +551,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -528,7 +562,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -539,7 +573,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -547,6 +581,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -588,7 +629,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Eureka-服务注册中心"><span class="nav-number">1.</span> <span class="nav-text">Eureka 服务注册中心</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么服务注册中心"><span class="nav-number">1.1.</span> <span class="nav-text">什么服务注册中心</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是Eureka注册中心"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.什么是Eureka注册中心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Eureka注册中心三种角色"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.Eureka注册中心三种角色</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Eureka-Server"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">Eureka Server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Application-Service-Service-Provider"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">Application Service (Service Provider)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Application-Client-Service-Consumer"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">Application Client (Service Consumer)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Eureka入门案例"><span class="nav-number">1.2.</span> <span class="nav-text">Eureka入门案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建maven项目，在pom文件中添加依赖"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建maven项目，在pom文件中添加依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在启动类上添加注解"><span class="nav-number">1.2.2.</span> <span class="nav-text">在启动类上添加注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改application-properties全局配置文件"><span class="nav-number">1.2.3.</span> <span class="nav-text">修改application.properties全局配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过浏览器访问Eureka-Server-服务管理平台"><span class="nav-number">1.2.4.</span> <span class="nav-text">通过浏览器访问Eureka-Server 服务管理平台</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Eureka 服务注册中心</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么服务注册中心"><span class="nav-number">1.1.</span> <span class="nav-text">什么服务注册中心</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是Eureka注册中心"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.什么是Eureka注册中心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Eureka注册中心三种角色"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.Eureka注册中心三种角色</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Eureka-Server"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">Eureka Server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Application-Service-Service-Provider"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">Application Service (Service Provider)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Application-Client-Service-Consumer"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">Application Client (Service Consumer)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Eureka入门案例"><span class="nav-number">1.2.</span> <span class="nav-text">Eureka入门案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建maven项目，在pom文件中添加依赖"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建maven项目，在pom文件中添加依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在启动类上添加注解"><span class="nav-number">1.2.2.</span> <span class="nav-text">在启动类上添加注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改application-properties全局配置文件"><span class="nav-number">1.2.3.</span> <span class="nav-text">修改application.properties全局配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过浏览器访问Eureka-Server-服务管理平台"><span class="nav-number">1.2.4.</span> <span class="nav-text">通过浏览器访问Eureka-Server 服务管理平台</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -608,7 +649,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

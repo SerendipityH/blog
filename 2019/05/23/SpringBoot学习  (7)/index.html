@@ -68,24 +68,26 @@
 
 
 
+  <link rel="alternate" href="/blog/atom.xml" title="雅俗共赏" type="application/atom+xml">
 
 
 
 
 
-<meta name="description" content="SpringBoot中异常处理方式1.SpringBoot 中对于异常处理提供了五种处理方式1.1自定义错误页面SpringBoot 默认的处理异常的机制：SpringBoot 默认的已经提供了一套处理异常的机制。一旦程序中出现了异常SpringBoot 会像/error 的url 发送请求。在springBoot 中提供了一个叫BasicExceptionController 来处理/error">
+
+<meta name="description" content="SpringBoot中异常处理方式 1.SpringBoot 中对于异常处理提供了五种处理方式 1.1自定义错误页面 SpringBoot 默认的处理异常的机制：SpringBoot 默认的已经提供了一套处理异常的机制。 一旦程序中出现了异常SpringBoot 会像/error 的url 发送请求。在springBoot 中提供了一个 叫BasicExceptionController 来处理/">
 <meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot学习（7）">
 <meta property="og:url" content="http://yoursite.com/blog/2019/05/23/SpringBoot学习  (7)/index.html">
 <meta property="og:site_name" content="雅俗共赏">
-<meta property="og:description" content="SpringBoot中异常处理方式1.SpringBoot 中对于异常处理提供了五种处理方式1.1自定义错误页面SpringBoot 默认的处理异常的机制：SpringBoot 默认的已经提供了一套处理异常的机制。一旦程序中出现了异常SpringBoot 会像/error 的url 发送请求。在springBoot 中提供了一个叫BasicExceptionController 来处理/error">
+<meta property="og:description" content="SpringBoot中异常处理方式 1.SpringBoot 中对于异常处理提供了五种处理方式 1.1自定义错误页面 SpringBoot 默认的处理异常的机制：SpringBoot 默认的已经提供了一套处理异常的机制。 一旦程序中出现了异常SpringBoot 会像/error 的url 发送请求。在springBoot 中提供了一个 叫BasicExceptionController 来处理/">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/SpringBoot/SpringBoot13.bmp">
 <meta property="og:updated_time" content="2019-05-23T14:08:50.570Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot学习（7）">
-<meta name="twitter:description" content="SpringBoot中异常处理方式1.SpringBoot 中对于异常处理提供了五种处理方式1.1自定义错误页面SpringBoot 默认的处理异常的机制：SpringBoot 默认的已经提供了一套处理异常的机制。一旦程序中出现了异常SpringBoot 会像/error 的url 发送请求。在springBoot 中提供了一个叫BasicExceptionController 来处理/error">
+<meta name="twitter:description" content="SpringBoot中异常处理方式 1.SpringBoot 中对于异常处理提供了五种处理方式 1.1自定义错误页面 SpringBoot 默认的处理异常的机制：SpringBoot 默认的已经提供了一套处理异常的机制。 一旦程序中出现了异常SpringBoot 会像/error 的url 发送请求。在springBoot 中提供了一个 叫BasicExceptionController 来处理/">
 <meta name="twitter:image" content="http://yoursite.com/images/SpringBoot/SpringBoot13.bmp">
 
 
@@ -352,7 +354,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  557
+                  568
                 </span>
               
 
@@ -377,13 +379,47 @@
       
 
       
-        <h2 id="SpringBoot中异常处理方式"><a href="#SpringBoot中异常处理方式" class="headerlink" title="SpringBoot中异常处理方式"></a>SpringBoot中异常处理方式</h2><h3 id="1-SpringBoot-中对于异常处理提供了五种处理方式"><a href="#1-SpringBoot-中对于异常处理提供了五种处理方式" class="headerlink" title="1.SpringBoot 中对于异常处理提供了五种处理方式"></a>1.SpringBoot 中对于异常处理提供了五种处理方式</h3><h4 id="1-1自定义错误页面"><a href="#1-1自定义错误页面" class="headerlink" title="1.1自定义错误页面"></a>1.1自定义错误页面</h4><p>SpringBoot 默认的处理异常的机制：SpringBoot 默认的已经提供了一套处理异常的机制。<br>一旦程序中出现了异常SpringBoot 会像/error 的url 发送请求。在springBoot 中提供了一个<br>叫BasicExceptionController 来处理/error 请求，然后跳转到默认显示异常的页面来展示异常<br>信息。</p>
-<p>如果我们需要将所有的异常同一跳转到自定义的错误页面， 需要再<br>src/main/resources/templates 目录下创建error.html 页面。<strong>注意：名称必须叫error</strong><br>自定义错误页面<br><img src="/images/SpringBoot/SpringBoot13.bmp" alt></p>
-<h4 id="1-2-ExceptionHandle-注解处理异常"><a href="#1-2-ExceptionHandle-注解处理异常" class="headerlink" title="1.2@ExceptionHandle 注解处理异常"></a>1.2@ExceptionHandle 注解处理异常</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@ExceptionHandler(value= &#123;java.lang.ArithmeticException.class&#125;)</span><br><span class="line">   public ModelAndView ArithmeticExceptionHandler(Exception e) &#123;</span><br><span class="line">         ModelAndView mv = new ModelAndView();</span><br><span class="line">         mv.addObject(&quot;error&quot;,e.toString());</span><br><span class="line">         mv.setViewName(&quot;error2&quot;);</span><br><span class="line">        return mv;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h4 id="1-3-ControllerAdvice-ExceptionHandler-注解处理异常"><a href="#1-3-ControllerAdvice-ExceptionHandler-注解处理异常" class="headerlink" title="1.3@ControllerAdvice+@ExceptionHandler 注解处理异常"></a>1.3@ControllerAdvice+@ExceptionHandler 注解处理异常</h4><p>需要创建一个能够处理异常的全局异常类。在该类上需要添加@ControllerAdvice 注解<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@ControllerAdvice</span><br><span class="line">public class GlobalException &#123;</span><br><span class="line">    /**</span><br><span class="line">     * </span><br><span class="line">     * @param e 会将产生的异常对象注入到方法中</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @ExceptionHandler(value= &#123;java.lang.ArithmeticException.class&#125;)</span><br><span class="line">    public ModelAndView ArithmeticExceptionHandler(Exception e) &#123;</span><br><span class="line">            ModelAndView mv = new ModelAndView();</span><br><span class="line">            mv.addObject(&quot;error&quot;,e.toString());</span><br><span class="line">            mv.setViewName(&quot;error2&quot;);</span><br><span class="line">            return mv;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="1-4配置SimpleMappingExceptionResolver-处理异常"><a href="#1-4配置SimpleMappingExceptionResolver-处理异常" class="headerlink" title="1.4配置SimpleMappingExceptionResolver 处理异常"></a>1.4配置SimpleMappingExceptionResolver 处理异常</h4><p>在全局异常类中添加一个方法完成异常的同一处理<br>只能做异常与视图映射，该方法不会返回异常信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class GlobalException &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 该方法有返回值</span><br><span class="line">     */</span><br><span class="line">    @Bean</span><br><span class="line">   public SimpleMappingExceptionResolver getExceptionResolver() &#123;</span><br><span class="line">        SimpleMappingExceptionResolver resolver = new SimpleMappingExceptionResolver();</span><br><span class="line">        </span><br><span class="line">        Properties mappings=new Properties();</span><br><span class="line">        /**</span><br><span class="line">         * 参数一：异常的类型，必须是异常类型的全名</span><br><span class="line">         * 参数二：视图名称</span><br><span class="line">         */</span><br><span class="line">        mappings.put(&quot;java.lang.ArithmeticException&quot;, &quot;error2&quot;);</span><br><span class="line">        mappings.put(&quot;java.lang.NullPointerException&quot;, &quot;error3&quot;);</span><br><span class="line">        //设置异常与视图映射信息的</span><br><span class="line">        resolver.setExceptionMappings(mappings);</span><br><span class="line">    </span><br><span class="line">        return resolver;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="1-5自定义HandlerExceptionResolver-类处理异常"><a href="#1-5自定义HandlerExceptionResolver-类处理异常" class="headerlink" title="1.5自定义HandlerExceptionResolver 类处理异常"></a>1.5自定义HandlerExceptionResolver 类处理异常</h4><p>需要再全局异常处理类中实现HandlerExceptionResolver 接口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class GlobalException implements HandlerExceptionResolver&#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response,</span><br><span class="line">            Object handler, Exception ex) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        ModelAndView mv = new ModelAndView();</span><br><span class="line">        //判断不同异常类型，做不同的视图跳转</span><br><span class="line">        if(ex instanceof ArithmeticException) &#123;</span><br><span class="line">            mv.setViewName(&quot;error2&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        if(ex instanceof NullPointerException) &#123;</span><br><span class="line">            mv.setViewName(&quot;error3&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        mv.addObject(&quot;error&quot;,ex.toString());</span><br><span class="line">        return mv;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+        <h2 id="SpringBoot中异常处理方式">SpringBoot中异常处理方式</h2>
+<h3 id="1-SpringBoot-中对于异常处理提供了五种处理方式">1.SpringBoot 中对于异常处理提供了五种处理方式</h3>
+<h4 id="1-1自定义错误页面">1.1自定义错误页面</h4>
+<p>SpringBoot 默认的处理异常的机制：SpringBoot 默认的已经提供了一套处理异常的机制。<br>
+一旦程序中出现了异常SpringBoot 会像/error 的url 发送请求。在springBoot 中提供了一个<br>
+叫BasicExceptionController 来处理/error 请求，然后跳转到默认显示异常的页面来展示异常<br>
+信息。</p>
+<p>如果我们需要将所有的异常同一跳转到自定义的错误页面， 需要再<br>
+src/main/resources/templates 目录下创建error.html 页面。<strong>注意：名称必须叫error</strong><br>
+自定义错误页面<br>
+<img src="/images/SpringBoot/SpringBoot13.bmp" alt></p>
+<h4 id="1-2-ExceptionHandle-注解处理异常">1.2@ExceptionHandle 注解处理异常</h4>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@ExceptionHandler(value= {java.lang.ArithmeticException.class})</span><br><span class="line">   public ModelAndView ArithmeticExceptionHandler(Exception e) {</span><br><span class="line">         ModelAndView mv = new ModelAndView();</span><br><span class="line">         mv.addObject("error",e.toString());</span><br><span class="line">         mv.setViewName("error2");</span><br><span class="line">        return mv;</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="1-3-ControllerAdvice-ExceptionHandler-注解处理异常">1.3@ControllerAdvice+@ExceptionHandler 注解处理异常</h4>
+<p>需要创建一个能够处理异常的全局异常类。在该类上需要添加@ControllerAdvice 注解</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@ControllerAdvice</span><br><span class="line">public class GlobalException {</span><br><span class="line">    /**</span><br><span class="line">     * </span><br><span class="line">     * @param e 会将产生的异常对象注入到方法中</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @ExceptionHandler(value= {java.lang.ArithmeticException.class})</span><br><span class="line">    public ModelAndView ArithmeticExceptionHandler(Exception e) {</span><br><span class="line">            ModelAndView mv = new ModelAndView();</span><br><span class="line">            mv.addObject("error",e.toString());</span><br><span class="line">            mv.setViewName("error2");</span><br><span class="line">            return mv;</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="1-4配置SimpleMappingExceptionResolver-处理异常">1.4配置SimpleMappingExceptionResolver 处理异常</h4>
+<p>在全局异常类中添加一个方法完成异常的同一处理<br>
+只能做异常与视图映射，该方法不会返回异常信息</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class GlobalException {</span><br><span class="line">    /**</span><br><span class="line">     * 该方法有返回值</span><br><span class="line">     */</span><br><span class="line">    @Bean</span><br><span class="line">   public SimpleMappingExceptionResolver getExceptionResolver() {</span><br><span class="line">        SimpleMappingExceptionResolver resolver = new SimpleMappingExceptionResolver();</span><br><span class="line">        </span><br><span class="line">        Properties mappings=new Properties();</span><br><span class="line">        /**</span><br><span class="line">         * 参数一：异常的类型，必须是异常类型的全名</span><br><span class="line">         * 参数二：视图名称</span><br><span class="line">         */</span><br><span class="line">        mappings.put("java.lang.ArithmeticException", "error2");</span><br><span class="line">        mappings.put("java.lang.NullPointerException", "error3");</span><br><span class="line">        //设置异常与视图映射信息的</span><br><span class="line">        resolver.setExceptionMappings(mappings);</span><br><span class="line">    </span><br><span class="line">        return resolver;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="1-5自定义HandlerExceptionResolver-类处理异常">1.5自定义HandlerExceptionResolver 类处理异常</h4>
+<p>需要再全局异常处理类中实现HandlerExceptionResolver 接口</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class GlobalException implements HandlerExceptionResolver{</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response,</span><br><span class="line">            Object handler, Exception ex) {</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        ModelAndView mv = new ModelAndView();</span><br><span class="line">        //判断不同异常类型，做不同的视图跳转</span><br><span class="line">        if(ex instanceof ArithmeticException) {</span><br><span class="line">            mv.setViewName("error2");</span><br><span class="line">        }</span><br><span class="line">        if(ex instanceof NullPointerException) {</span><br><span class="line">            mv.setViewName("error3");</span><br><span class="line">        }</span><br><span class="line">        mv.addObject("error",ex.toString());</span><br><span class="line">        return mv;</span><br><span class="line">    }</span><br><span class="line">   </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     
@@ -512,7 +548,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -523,7 +559,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -534,7 +570,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -542,6 +578,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -603,7 +646,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

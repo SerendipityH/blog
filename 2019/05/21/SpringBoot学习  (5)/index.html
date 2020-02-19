@@ -68,25 +68,27 @@
 
 
 
+  <link rel="alternate" href="/blog/atom.xml" title="雅俗共赏" type="application/atom+xml">
 
 
 
 
 
-<meta name="description" content="SpringBoot整合ThymeleafThymeleaf基本使用   1.在原来pom文件的基础加上12345&amp;lt;!-- Thymeleaf启动器 --&amp;gt;		&amp;lt;dependency&amp;gt;			&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;			&amp;lt;artifactId&amp;gt;spring-boot-start">
+
+<meta name="description" content="SpringBoot整合Thymeleaf Thymeleaf基本使用 1.在原来pom文件的基础加上 12345&amp;lt;!-- Thymeleaf启动器 --&amp;gt;		&amp;lt;dependency&amp;gt;			&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;			&amp;lt;artifactId&amp;gt;spring-boot-start">
 <meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot学习（5）">
 <meta property="og:url" content="http://yoursite.com/blog/2019/05/21/SpringBoot学习  (5)/index.html">
 <meta property="og:site_name" content="雅俗共赏">
-<meta property="og:description" content="SpringBoot整合ThymeleafThymeleaf基本使用   1.在原来pom文件的基础加上12345&amp;lt;!-- Thymeleaf启动器 --&amp;gt;		&amp;lt;dependency&amp;gt;			&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;			&amp;lt;artifactId&amp;gt;spring-boot-start">
+<meta property="og:description" content="SpringBoot整合Thymeleaf Thymeleaf基本使用 1.在原来pom文件的基础加上 12345&amp;lt;!-- Thymeleaf启动器 --&amp;gt;		&amp;lt;dependency&amp;gt;			&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;			&amp;lt;artifactId&amp;gt;spring-boot-start">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/SpringBoot/SpringBoot11.bmp">
 <meta property="og:image" content="http://yoursite.com/images/SpringBoot/SpringBoot12.bmp">
 <meta property="og:updated_time" content="2019-05-21T14:44:34.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot学习（5）">
-<meta name="twitter:description" content="SpringBoot整合ThymeleafThymeleaf基本使用   1.在原来pom文件的基础加上12345&amp;lt;!-- Thymeleaf启动器 --&amp;gt;		&amp;lt;dependency&amp;gt;			&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;			&amp;lt;artifactId&amp;gt;spring-boot-start">
+<meta name="twitter:description" content="SpringBoot整合Thymeleaf Thymeleaf基本使用 1.在原来pom文件的基础加上 12345&amp;lt;!-- Thymeleaf启动器 --&amp;gt;		&amp;lt;dependency&amp;gt;			&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;			&amp;lt;artifactId&amp;gt;spring-boot-start">
 <meta name="twitter:image" content="http://yoursite.com/images/SpringBoot/SpringBoot11.bmp">
 
 
@@ -353,7 +355,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  744
+                  710
                 </span>
               
 
@@ -378,43 +380,87 @@
       
 
       
-        <h3 id="SpringBoot整合Thymeleaf"><a href="#SpringBoot整合Thymeleaf" class="headerlink" title="SpringBoot整合Thymeleaf"></a>SpringBoot整合Thymeleaf</h3><h3 id="Thymeleaf基本使用"><a href="#Thymeleaf基本使用" class="headerlink" title="Thymeleaf基本使用"></a>Thymeleaf基本使用</h3><p>   1.在原来pom文件的基础加上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Thymeleaf启动器 --&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
-<p>  2.创建存放视图的目录<br>  目录位置：src/main/resources/templates<br>  templates：该目录是安全的。意味着该目录下的内容是不允许外界直接访问的。<br> <img src="/images/SpringBoot/SpringBoot11.bmp" alt></p>
-<p>  3.Thymeleaf 的基本使用<br>    Thymelaef 是通过他特定语法对html 的标记做渲染</p>
-<p>编写Controller<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class DemoController &#123;</span><br><span class="line">           </span><br><span class="line">    @RequestMapping(&quot;/show&quot;)</span><br><span class="line">    public String showInfo(Model model) &#123;</span><br><span class="line">        model.addAttribute(&quot;msg&quot;, &quot;Thymeleaf 第一个案例&quot;);</span><br><span class="line">        return &quot;index&quot;;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h3 id="SpringBoot整合Thymeleaf">SpringBoot整合Thymeleaf</h3>
+<h3 id="Thymeleaf基本使用">Thymeleaf基本使用</h3>
+<p>1.在原来pom文件的基础加上</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Thymeleaf启动器 --&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>2.创建存放视图的目录<br>
+目录位置：src/main/resources/templates<br>
+templates：该目录是安全的。意味着该目录下的内容是不允许外界直接访问的。<br>
+<img src="/images/SpringBoot/SpringBoot11.bmp" alt></p>
+<p>3.Thymeleaf 的基本使用<br>
+Thymelaef 是通过他特定语法对html 的标记做渲染</p>
+<p>编写Controller</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class DemoController {</span><br><span class="line">           </span><br><span class="line">    @RequestMapping("/show")</span><br><span class="line">    public String showInfo(Model model) {</span><br><span class="line">        model.addAttribute("msg", "Thymeleaf 第一个案例");</span><br><span class="line">        return "index";</span><br><span class="line">    }   </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p>创建视图.html</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">	&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">&lt;title&gt;Thymeleaf入门&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;span th:text=&quot;Hello&quot;&gt;&lt;/span&gt;</span><br><span class="line">	&lt;hr/&gt;</span><br><span class="line">	&lt;span th:text=&quot;$&#123;msg&#125;&quot;&gt;&lt;/span&gt;</span><br><span class="line">	&lt;hr/&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>4.测试<br><img src="/images/SpringBoot/SpringBoot12.bmp" alt></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">	&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset="UTF-8"&gt;</span><br><span class="line">&lt;title&gt;Thymeleaf入门&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;span th:text="Hello"&gt;&lt;/span&gt;</span><br><span class="line">	&lt;hr/&gt;</span><br><span class="line">	&lt;span th:text="${msg}"&gt;&lt;/span&gt;</span><br><span class="line">	&lt;hr/&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>4.测试<br>
+<img src="/images/SpringBoot/SpringBoot12.bmp" alt></p>
 <hr>
-<h3 id="Thymeleaf语法详解"><a href="#Thymeleaf语法详解" class="headerlink" title="Thymeleaf语法详解"></a>Thymeleaf语法详解</h3><blockquote>
-<h4 id="变量输出"><a href="#变量输出" class="headerlink" title="变量输出"></a>变量输出</h4><ul>
-<li>在页面中输出值<blockquote>
+<h3 id="Thymeleaf语法详解">Thymeleaf语法详解</h3>
+<blockquote>
+<h4 id="变量输出">变量输出</h4>
+<ul>
+<li>在页面中输出值</li>
+</ul>
+<blockquote>
 <p>th:text</p>
 </blockquote>
-</li>
-<li>可以将一个值放入到input标签的value中 <blockquote>
+<ul>
+<li>可以将一个值放入到input标签的value中</li>
+</ul>
+<blockquote>
 <p>th:value</p>
 </blockquote>
-</li>
-</ul>
 </blockquote>
-<h4 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h4><p>1.判断字符串是否为空，如果为空返回true，否则返回false</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span th:text=&quot;$&#123;#strings.isEmpty(msg)&#125;&quot;&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
-<p>2.判断字符串是否包含指定的子串，如果包含返回true，否则返回false<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span th:text=&quot;$&#123;#strings.contains(msg,&apos;T&apos;)&#125;&quot;&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
-<p>3.判断当前字符串是否以子串开头，如果是返回true，否则返回false<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span th:text=&quot;$&#123;#strings.startsWith(msg,&apos;T&apos;)&#125;&quot;&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
-<p>4.判断当前字符串是否以子串结尾，如果是返回true，否则返回false<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span th:text=&quot;$&#123;#strings.endsWith(msg,&apos;T&apos;)&#125;&quot;&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
-<h4 id="日期格式化处理"><a href="#日期格式化处理" class="headerlink" title="日期格式化处理"></a>日期格式化处理</h4><p>1.格式化日期，默认的以浏览器默认语言为格式化标准<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span th:text=&quot;$&#123;#dates.format(key)&#125;&quot;&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
-<p>2.按照自定义的格式做日期转换<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span th:text=&quot;$&#123;#dates.format(key,&apos;yyy/MM/dd&apos;)&#125;&quot;&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
-<p>3.取年月日<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;span th:text=&quot;$&#123;#dates.year(key)&#125;&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;hr/&gt;</span><br><span class="line">&lt;span th:text=&quot;$&#123;#dates.month(key)&#125;&quot;&gt;&lt;/span&gt;</span><br><span class="line">&lt;hr/&gt;</span><br><span class="line">&lt;span th:text=&quot;$&#123;#dates.day(key)&#125;&quot;&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
-<h4 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h4><p>使用th:if<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;span th:if=&quot;$&#123;sex&#125;==&apos;男&apos;&quot;&gt;</span><br><span class="line">		性别：男</span><br><span class="line">&lt;/span&gt;</span><br><span class="line">&lt;span th:if=&quot;$&#123;sex&#125;==&apos;女&apos;&quot;&gt;</span><br><span class="line">		性别：女</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
-<p>使用th:case<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div th:switch=&quot;$&#123;id&#125;&quot;&gt;</span><br><span class="line">	&lt;span th:case=&quot;1&quot;&gt;1&lt;/span&gt;</span><br><span class="line">	&lt;span th:case=&quot;2&quot;&gt;2&lt;/span&gt;</span><br><span class="line">	&lt;span th:case=&quot;3&quot;&gt;3&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<h4 id="域对象操作"><a href="#域对象操作" class="headerlink" title="域对象操作"></a>域对象操作</h4><pre><code>Request:&lt;span th:text=&quot;${#httpServletRequest.getAttribute(&apos;req&apos;)}&quot;&gt;&lt;/span&gt;&lt;br/&gt;
+<h4 id="字符串操作">字符串操作</h4>
+<p>1.判断字符串是否为空，如果为空返回true，否则返回false</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span th:text="${#strings.isEmpty(msg)}"&gt;&lt;/span&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>2.判断字符串是否包含指定的子串，如果包含返回true，否则返回false</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span th:text="${#strings.contains(msg,'T')}"&gt;&lt;/span&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>3.判断当前字符串是否以子串开头，如果是返回true，否则返回false</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span th:text="${#strings.startsWith(msg,'T')}"&gt;&lt;/span&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>4.判断当前字符串是否以子串结尾，如果是返回true，否则返回false</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span th:text="${#strings.endsWith(msg,'T')}"&gt;&lt;/span&gt;</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="日期格式化处理">日期格式化处理</h4>
+<p>1.格式化日期，默认的以浏览器默认语言为格式化标准</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span th:text="${#dates.format(key)}"&gt;&lt;/span&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>2.按照自定义的格式做日期转换</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span th:text="${#dates.format(key,'yyy/MM/dd')}"&gt;&lt;/span&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>3.取年月日</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;span th:text="${#dates.year(key)}"&gt;&lt;/span&gt;</span><br><span class="line">&lt;hr/&gt;</span><br><span class="line">&lt;span th:text="${#dates.month(key)}"&gt;&lt;/span&gt;</span><br><span class="line">&lt;hr/&gt;</span><br><span class="line">&lt;span th:text="${#dates.day(key)}"&gt;&lt;/span&gt;</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="条件判断">条件判断</h4>
+<p>使用th:if</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;span th:if="${sex}=='男'"&gt;</span><br><span class="line">		性别：男</span><br><span class="line">&lt;/span&gt;</span><br><span class="line">&lt;span th:if="${sex}=='女'"&gt;</span><br><span class="line">		性别：女</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>使用th:case</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div th:switch="${id}"&gt;</span><br><span class="line">	&lt;span th:case="1"&gt;1&lt;/span&gt;</span><br><span class="line">	&lt;span th:case="2"&gt;2&lt;/span&gt;</span><br><span class="line">	&lt;span th:case="3"&gt;3&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="域对象操作">域对象操作</h4>
+<pre><code>Request:&lt;span th:text="${#httpServletRequest.getAttribute('req')}"&gt;&lt;/span&gt;&lt;br/&gt;
 
-Session:&lt;span th:text=&quot;${session.sess}&quot;&gt;&lt;/span&gt;&lt;br/&gt;
+Session:&lt;span th:text="${session.sess}"&gt;&lt;/span&gt;&lt;br/&gt;
 
-Application:&lt;span th:text=&quot;${application.app}&quot;&gt;&lt;/span&gt;
-</code></pre><p>代码地址：<a href="https://github.com/SerendipityH/SpringBoot" target="_blank" rel="noopener">https://github.com/SerendipityH/SpringBoot</a></p>
-
+Application:&lt;span th:text="${application.app}"&gt;&lt;/span&gt;
+</code></pre>
+<p>代码地址：<a href="https://github.com/SerendipityH/SpringBoot" target="_blank" rel="noopener">https://github.com/SerendipityH/SpringBoot</a></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     
@@ -543,7 +589,7 @@ Application:&lt;span th:text=&quot;${application.app}&quot;&gt;&lt;/span&gt;
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -554,7 +600,7 @@ Application:&lt;span th:text=&quot;${application.app}&quot;&gt;&lt;/span&gt;
               
               <div class="site-state-item site-state-categories">
                 <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -565,7 +611,7 @@ Application:&lt;span th:text=&quot;${application.app}&quot;&gt;&lt;/span&gt;
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -573,6 +619,13 @@ Application:&lt;span th:text=&quot;${application.app}&quot;&gt;&lt;/span&gt;
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -634,7 +687,7 @@ Application:&lt;span th:text=&quot;${application.app}&quot;&gt;&lt;/span&gt;
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

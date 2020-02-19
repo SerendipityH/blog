@@ -68,23 +68,25 @@
 
 
 
+  <link rel="alternate" href="/blog/atom.xml" title="雅俗共赏" type="application/atom+xml">
 
 
 
 
 
-<meta name="description" content="执行HQL语句时12@Query(&amp;quot;from Users where name = ?&amp;quot;) List&amp;lt;Users&amp;gt; queryByNameUseHQL(String name); 出现错误1Caused by: java.lang.IllegalArgumentException: JDBC style parameters (?) are not supporte">
+
+<meta name="description" content="执行HQL语句时 12@Query(&quot;from Users where name = ?&quot;) List&amp;lt;Users&amp;gt; queryByNameUseHQL(String name); 出现错误 1Caused by: java.lang.IllegalArgumentException: JDBC style parameters (?) are not supported for JP">
 <meta name="keywords" content="日常问题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JDBC style parameters (?) are not supported for JPA queries.">
 <meta property="og:url" content="http://yoursite.com/blog/2019/05/26/queries/index.html">
 <meta property="og:site_name" content="雅俗共赏">
-<meta property="og:description" content="执行HQL语句时12@Query(&amp;quot;from Users where name = ?&amp;quot;) List&amp;lt;Users&amp;gt; queryByNameUseHQL(String name); 出现错误1Caused by: java.lang.IllegalArgumentException: JDBC style parameters (?) are not supporte">
+<meta property="og:description" content="执行HQL语句时 12@Query(&quot;from Users where name = ?&quot;) List&amp;lt;Users&amp;gt; queryByNameUseHQL(String name); 出现错误 1Caused by: java.lang.IllegalArgumentException: JDBC style parameters (?) are not supported for JP">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-05-26T03:56:50.469Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JDBC style parameters (?) are not supported for JPA queries.">
-<meta name="twitter:description" content="执行HQL语句时12@Query(&amp;quot;from Users where name = ?&amp;quot;) List&amp;lt;Users&amp;gt; queryByNameUseHQL(String name); 出现错误1Caused by: java.lang.IllegalArgumentException: JDBC style parameters (?) are not supporte">
+<meta name="twitter:description" content="执行HQL语句时 12@Query(&quot;from Users where name = ?&quot;) List&amp;lt;Users&amp;gt; queryByNameUseHQL(String name); 出现错误 1Caused by: java.lang.IllegalArgumentException: JDBC style parameters (?) are not supported for JP">
 
 
 
@@ -350,7 +352,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  65
+                  114
                 </span>
               
 
@@ -375,10 +377,31 @@
       
 
       
-        <p>执行HQL语句时<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Query(&quot;from Users where name = ?&quot;) </span><br><span class="line">List&lt;Users&gt; queryByNameUseHQL(String name);</span><br></pre></td></tr></table></figure></p>
-<p>出现错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.lang.IllegalArgumentException: JDBC style parameters (?) are not supported for JPA queries.</span><br></pre></td></tr></table></figure></p>
-<p>在该版本中不支持’?’了<br>改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Query(&quot;from Users where name =:name&quot;) </span><br><span class="line">   List&lt;Users&gt; queryByNameUseHQL(String name);</span><br></pre></td></tr></table></figure></p>
-
+        <p>执行HQL语句时</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Query("from Users where name = ?") </span><br><span class="line">List&lt;Users&gt; queryByNameUseHQL(String name);</span><br></pre></td></tr></tbody></table></figure>
+<p>出现错误</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.lang.IllegalArgumentException: JDBC style parameters (?) are not supported for JPA queries.</span><br></pre></td></tr></tbody></table></figure>
+<p>在该版本中不支持’?'了<br>
+改为</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@Query("from Users where name =:name") </span><br><span class="line">   List&lt;Users&gt; queryByNameUseHQL(String name);</span><br></pre></td></tr></tbody></table></figure><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     
@@ -498,7 +521,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -509,7 +532,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -520,7 +543,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -528,6 +551,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -573,7 +603,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

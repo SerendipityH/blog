@@ -68,25 +68,27 @@
 
 
 
+  <link rel="alternate" href="/blog/atom.xml" title="雅俗共赏" type="application/atom+xml">
 
 
 
 
 
-<meta name="description" content="为什么重写equals还要重写hashcode通过Student类举例说明">
+
+<meta name="description" content="为什么重写equals还要重写hashcode 通过Student类举例说明">
 <meta name="keywords" content="Java篇">
 <meta property="og:type" content="article">
 <meta property="og:title" content="为什么重写equals还要重写hashcode">
 <meta property="og:url" content="http://yoursite.com/blog/2019/04/11/为什么重写equals还要重写hashcode/index.html">
 <meta property="og:site_name" content="雅俗共赏">
-<meta property="og:description" content="为什么重写equals还要重写hashcode通过Student类举例说明">
+<meta property="og:description" content="为什么重写equals还要重写hashcode 通过Student类举例说明">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/java/javase/equals.bmp">
 <meta property="og:image" content="http://yoursite.com/images/java/javase/equals2.bmp">
 <meta property="og:updated_time" content="2019-05-15T15:10:44.219Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="为什么重写equals还要重写hashcode">
-<meta name="twitter:description" content="为什么重写equals还要重写hashcode通过Student类举例说明">
+<meta name="twitter:description" content="为什么重写equals还要重写hashcode 通过Student类举例说明">
 <meta name="twitter:image" content="http://yoursite.com/images/java/javase/equals.bmp">
 
 
@@ -353,7 +355,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  499
+                  520
                 </span>
               
 
@@ -378,15 +380,41 @@
       
 
       
-        <h3 id="为什么重写equals还要重写hashcode"><a href="#为什么重写equals还要重写hashcode" class="headerlink" title="为什么重写equals还要重写hashcode"></a>为什么重写equals还要重写hashcode</h3><p>通过Student类举例说明</p>
+        <h3 id="为什么重写equals还要重写hashcode">为什么重写equals还要重写hashcode</h3>
+<p>通过Student类举例说明</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">public class Student &#123;</span><br><span class="line">    private String name;</span><br><span class="line">    private Integer age;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public Student(String name, Integer age) &#123;</span><br><span class="line">        super();</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public boolean equals(Object obj) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line"></span><br><span class="line">        if (obj == null) &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">        if (obj == this) &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        if (obj.getClass() != this.getClass()) &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">        Student student = (Student) obj;</span><br><span class="line">        if (name.equals(student.name) &amp;&amp; age == student.age) &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        Student student = new Student(&quot;Tom&quot;, 10);</span><br><span class="line">        HashMap&lt;Object, Object&gt; hashMap = new HashMap&lt;&gt;();</span><br><span class="line">        hashMap.put(student, &quot;X001&quot;);</span><br><span class="line">        System.out.println(hashMap.get(new Student(&quot;Tom&quot;, 10)));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在Student类中，重写了equals方法，通过name和age判断是否为同一人。<br>然后在将student对象作为key放入hashmap中，这时将学号作为value存入。<br>再调用hashmap的get方法通过key去寻找value,根据equals方法判断应为相同并且输出”X001”<br>但实际上输出为null<br><img src="/images/java/javase/equals.bmp" alt><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public V get(Object key) &#123;</span><br><span class="line">       Node&lt;K,V&gt; e;</span><br><span class="line">       return (e = getNode(hash(key), key)) == null ? null : e.value;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"> /**</span><br><span class="line">    * Implements Map.get and related methods.</span><br><span class="line">    *</span><br><span class="line">    * @param hash hash for key</span><br><span class="line">    * @param key the key</span><br><span class="line">    * @return the node, or null if none</span><br><span class="line">    */</span><br><span class="line">   final Node&lt;K,V&gt; getNode(int hash, Object key) &#123;</span><br><span class="line">       Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; first, e; int n; K k;</span><br><span class="line">       if ((tab = table) != null &amp;&amp; (n = tab.length) &gt; 0 &amp;&amp;</span><br><span class="line">           (first = tab[(n - 1) &amp; hash]) != null) &#123;</span><br><span class="line">           if (first.hash == hash &amp;&amp; // always check first node</span><br><span class="line">               ((k = first.key) == key || (key != null &amp;&amp; key.equals(k))))</span><br><span class="line">               return first;</span><br><span class="line">           if ((e = first.next) != null) &#123;</span><br><span class="line">               if (first instanceof TreeNode)</span><br><span class="line">                   return ((TreeNode&lt;K,V&gt;)first).getTreeNode(hash, key);</span><br><span class="line">               do &#123;</span><br><span class="line">                   if (e.hash == hash &amp;&amp;</span><br><span class="line">                       ((k = e.key) == key || (key != null &amp;&amp; key.equals(k))))</span><br><span class="line">                       return e;</span><br><span class="line">               &#125; while ((e = e.next) != null);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       return null;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">public class Student {</span><br><span class="line">    private String name;</span><br><span class="line">    private Integer age;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public Student(String name, Integer age) {</span><br><span class="line">        super();</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.age = age;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public boolean equals(Object obj) {</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line"></span><br><span class="line">        if (obj == null) {</span><br><span class="line">            return false;</span><br><span class="line">        }</span><br><span class="line">        if (obj == this) {</span><br><span class="line">            return true;</span><br><span class="line">        }</span><br><span class="line">        if (obj.getClass() != this.getClass()) {</span><br><span class="line">            return false;</span><br><span class="line">        }</span><br><span class="line">        Student student = (Student) obj;</span><br><span class="line">        if (name.equals(student.name) &amp;&amp; age == student.age) {</span><br><span class="line">            return true;</span><br><span class="line">        }</span><br><span class="line">        return false;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) {</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        Student student = new Student("Tom", 10);</span><br><span class="line">        HashMap&lt;Object, Object&gt; hashMap = new HashMap&lt;&gt;();</span><br><span class="line">        hashMap.put(student, "X001");</span><br><span class="line">        System.out.println(hashMap.get(new Student("Tom", 10)));</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>在Student类中，重写了equals方法，通过name和age判断是否为同一人。<br>
+然后在将student对象作为key放入hashmap中，这时将学号作为value存入。<br>
+再调用hashmap的get方法通过key去寻找value,根据equals方法判断应为相同并且输出"X001"<br>
+但实际上输出为null<br>
+<img src="/images/java/javase/equals.bmp" alt></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public V get(Object key) {</span><br><span class="line">       Node&lt;K,V&gt; e;</span><br><span class="line">       return (e = getNode(hash(key), key)) == null ? null : e.value;</span><br><span class="line">   }</span><br><span class="line"></span><br><span class="line"> /**</span><br><span class="line">    * Implements Map.get and related methods.</span><br><span class="line">    *</span><br><span class="line">    * @param hash hash for key</span><br><span class="line">    * @param key the key</span><br><span class="line">    * @return the node, or null if none</span><br><span class="line">    */</span><br><span class="line">   final Node&lt;K,V&gt; getNode(int hash, Object key) {</span><br><span class="line">       Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; first, e; int n; K k;</span><br><span class="line">       if ((tab = table) != null &amp;&amp; (n = tab.length) &gt; 0 &amp;&amp;</span><br><span class="line">           (first = tab[(n - 1) &amp; hash]) != null) {</span><br><span class="line">           if (first.hash == hash &amp;&amp; // always check first node</span><br><span class="line">               ((k = first.key) == key || (key != null &amp;&amp; key.equals(k))))</span><br><span class="line">               return first;</span><br><span class="line">           if ((e = first.next) != null) {</span><br><span class="line">               if (first instanceof TreeNode)</span><br><span class="line">                   return ((TreeNode&lt;K,V&gt;)first).getTreeNode(hash, key);</span><br><span class="line">               do {</span><br><span class="line">                   if (e.hash == hash &amp;&amp;</span><br><span class="line">                       ((k = e.key) == key || (key != null &amp;&amp; key.equals(k))))</span><br><span class="line">                       return e;</span><br><span class="line">               } while ((e = e.next) != null);</span><br><span class="line">           }</span><br><span class="line">       }</span><br><span class="line">       return null;</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
 <p>通过HashMap的源码可以发现是先通过比较hash值，当hash值不相等时，返回值为null</p>
-<p>加上重写hashcode方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">   public int hashCode() &#123;</span><br><span class="line">       // TODO Auto-generated method stub</span><br><span class="line">       final int temp = 31;</span><br><span class="line">       int result = 1;</span><br><span class="line">       result = temp * result + ((name == null) ? 0 : name.hashCode());</span><br><span class="line">       result = temp * result + age;</span><br><span class="line">       return result;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/images/java/javase/equals2.bmp" alt><br>这时正常输出X001</p>
+<p>加上重写hashcode方法</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">   public int hashCode() {</span><br><span class="line">       // TODO Auto-generated method stub</span><br><span class="line">       final int temp = 31;</span><br><span class="line">       int result = 1;</span><br><span class="line">       result = temp * result + ((name == null) ? 0 : name.hashCode());</span><br><span class="line">       result = temp * result + age;</span><br><span class="line">       return result;</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="/images/java/javase/equals2.bmp" alt><br>
+这时正常输出X001</p>
 <p>根据 Java 规范，使用 equal() 方法来判断两个相等的对象，必须具有相同的 hashcode。</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     
@@ -515,7 +543,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -526,7 +554,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -537,7 +565,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -545,6 +573,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -606,7 +641,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

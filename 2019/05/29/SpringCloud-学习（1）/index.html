@@ -68,23 +68,25 @@
 
 
 
+  <link rel="alternate" href="/blog/atom.xml" title="雅俗共赏" type="application/atom+xml">
 
 
 
 
 
-<meta name="description" content="1.概念定义　　SpringCloud是一个微服务框架，相比Dubbo等RPC框架,SpringCloud提供了全套的分布式系统解决方案。　　Spring Cloud 对微服务基础框架Netflix 的多个开源组件进行了封装，同时又实现了和云端平台以及和Spring Boot 开发框架的集成。　　Spring Cloud 为微服务架构开发涉及的配置管理，服务治理，熔断机制，智能路由，微代理，控制总">
+
+<meta name="description" content="1.概念定义 SpringCloud是一个微服务框架，相比Dubbo等RPC框架,SpringCloud提供了全套的分布式系统解决方案。 　　Spring Cloud 对微服务基础框架Netflix 的多个开源组件进行了封装，同时又实现了和云端平台以及和Spring Boot 开发框架的集成。 　　Spring Cloud 为微服务架构开发涉及的__配置管理，服务治理，熔断机制，智能路由，微代理，">
 <meta name="keywords" content="SpringCloud">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringCloud 学习（1） ">
 <meta property="og:url" content="http://yoursite.com/blog/2019/05/29/SpringCloud-学习（1）/index.html">
 <meta property="og:site_name" content="雅俗共赏">
-<meta property="og:description" content="1.概念定义　　SpringCloud是一个微服务框架，相比Dubbo等RPC框架,SpringCloud提供了全套的分布式系统解决方案。　　Spring Cloud 对微服务基础框架Netflix 的多个开源组件进行了封装，同时又实现了和云端平台以及和Spring Boot 开发框架的集成。　　Spring Cloud 为微服务架构开发涉及的配置管理，服务治理，熔断机制，智能路由，微代理，控制总">
+<meta property="og:description" content="1.概念定义 SpringCloud是一个微服务框架，相比Dubbo等RPC框架,SpringCloud提供了全套的分布式系统解决方案。 　　Spring Cloud 对微服务基础框架Netflix 的多个开源组件进行了封装，同时又实现了和云端平台以及和Spring Boot 开发框架的集成。 　　Spring Cloud 为微服务架构开发涉及的__配置管理，服务治理，熔断机制，智能路由，微代理，">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-05-29T14:28:53.473Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringCloud 学习（1） ">
-<meta name="twitter:description" content="1.概念定义　　SpringCloud是一个微服务框架，相比Dubbo等RPC框架,SpringCloud提供了全套的分布式系统解决方案。　　Spring Cloud 对微服务基础框架Netflix 的多个开源组件进行了封装，同时又实现了和云端平台以及和Spring Boot 开发框架的集成。　　Spring Cloud 为微服务架构开发涉及的配置管理，服务治理，熔断机制，智能路由，微代理，控制总">
+<meta name="twitter:description" content="1.概念定义 SpringCloud是一个微服务框架，相比Dubbo等RPC框架,SpringCloud提供了全套的分布式系统解决方案。 　　Spring Cloud 对微服务基础框架Netflix 的多个开源组件进行了封装，同时又实现了和云端平台以及和Spring Boot 开发框架的集成。 　　Spring Cloud 为微服务架构开发涉及的__配置管理，服务治理，熔断机制，智能路由，微代理，">
 
 
 
@@ -350,7 +352,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  773
+                  827
                 </span>
               
 
@@ -375,20 +377,61 @@
       
 
       
-        <h2 id="1-概念定义"><a href="#1-概念定义" class="headerlink" title="1.概念定义"></a>1.概念定义</h2><p>　　SpringCloud是一个微服务框架，相比Dubbo等RPC框架,<strong>SpringCloud提供了全套的分布式系统解决方案</strong>。<br>　　Spring Cloud 对微服务基础框架Netflix 的多个开源组件进行了封装，同时又实现了和云端平台以及和Spring Boot 开发框架的集成。<br>　　Spring Cloud 为微服务架构开发涉及的<strong>配置管理，服务治理，熔断机制，智能路由，微代理，控制总线，一次性token，全局一致性锁，leader 选举，分布式session，集群状态</strong>管理等操作提供了一种简单的开发方式。<br>　　Spring Cloud 为开发者提供了快速构建分布式系统的工具，开发者可以快速的启动服务或构建应用、同时能够快速和云平台资源进行对接。</p>
-<h2 id="2-Spring-Cloud-的子项目"><a href="#2-Spring-Cloud-的子项目" class="headerlink" title="2.Spring Cloud 的子项目"></a>2.Spring Cloud 的子项目</h2><p>Spring Cloud 包含了很多子项目，如：</p>
-<h3 id="2-1Spring-Cloud-Config：配置管理工具，支持使用Git-存储配置内容，支持应"><a href="#2-1Spring-Cloud-Config：配置管理工具，支持使用Git-存储配置内容，支持应" class="headerlink" title="2.1Spring Cloud Config：配置管理工具，支持使用Git 存储配置内容，支持应"></a>2.1Spring Cloud Config：配置管理工具，支持使用Git 存储配置内容，支持应</h3><p>用配置的外部化存储，支持客户端配置信息刷新、加解密配置内容等</p>
-<h3 id="2-2-Spring-Cloud-Bus：事件、消息总线，用于在集群（例如，配置变化事件）中"><a href="#2-2-Spring-Cloud-Bus：事件、消息总线，用于在集群（例如，配置变化事件）中" class="headerlink" title="2.2 Spring Cloud Bus：事件、消息总线，用于在集群（例如，配置变化事件）中"></a>2.2 Spring Cloud Bus：事件、消息总线，用于在集群（例如，配置变化事件）中</h3><p>传播状态变化，可与Spring Cloud Config 联合实现热部署。</p>
-<h3 id="2-3Spring-Cloud-Netflix：针对多种Netflix-组件提供的开发工具包，其中包括"><a href="#2-3Spring-Cloud-Netflix：针对多种Netflix-组件提供的开发工具包，其中包括" class="headerlink" title="2.3Spring Cloud Netflix：针对多种Netflix 组件提供的开发工具包，其中包括"></a>2.3Spring Cloud Netflix：针对多种Netflix 组件提供的开发工具包，其中包括</h3><p>Eureka、Hystrix、Zuul、Archaius 等。</p>
-<h4 id="2-3-1Netflix-Eureka：一个基于rest-服务的服务治理组件，包括服务注册中"><a href="#2-3-1Netflix-Eureka：一个基于rest-服务的服务治理组件，包括服务注册中" class="headerlink" title="2.3.1Netflix Eureka：一个基于rest 服务的服务治理组件，包括服务注册中"></a>2.3.1Netflix Eureka：一个基于rest 服务的服务治理组件，包括服务注册中</h4><p>心、服务注册与服务发现机制的实现，实现了云端负载均衡和中间层服务器<br>的故障转移。</p>
-<h4 id="2-3-2Netflix-Hystrix：容错管理工具，实现断路器模式，通过控制服务的节点-从而对延迟和故障提供更强大的容错能力。"><a href="#2-3-2Netflix-Hystrix：容错管理工具，实现断路器模式，通过控制服务的节点-从而对延迟和故障提供更强大的容错能力。" class="headerlink" title="　　2.3.2Netflix Hystrix：容错管理工具，实现断路器模式，通过控制服务的节点,从而对延迟和故障提供更强大的容错能力。"></a>　　2.3.2Netflix Hystrix：容错管理工具，实现断路器模式，通过控制服务的节点,从而对延迟和故障提供更强大的容错能力。</h4><h4 id="2-3-3Netflix-Ribbon：客户端负载均衡的服务调用组件。"><a href="#2-3-3Netflix-Ribbon：客户端负载均衡的服务调用组件。" class="headerlink" title="　　2.3.3Netflix Ribbon：客户端负载均衡的服务调用组件。"></a>　　2.3.3Netflix Ribbon：客户端负载均衡的服务调用组件。</h4><h4 id="2-3-4Netflix-Feign：基于Ribbon-和Hystrix-的声明式服务调用组件。"><a href="#2-3-4Netflix-Feign：基于Ribbon-和Hystrix-的声明式服务调用组件。" class="headerlink" title="　　2.3.4Netflix Feign：基于Ribbon 和Hystrix 的声明式服务调用组件。"></a>　　2.3.4Netflix Feign：基于Ribbon 和Hystrix 的声明式服务调用组件。</h4><h4 id="2-3-5Netflix-Zuul：微服务网关，提供动态路由，访问过滤等服务。"><a href="#2-3-5Netflix-Zuul：微服务网关，提供动态路由，访问过滤等服务。" class="headerlink" title="　　2.3.5Netflix Zuul：微服务网关，提供动态路由，访问过滤等服务。"></a>　　2.3.5Netflix Zuul：微服务网关，提供动态路由，访问过滤等服务。</h4><h4 id="2-3-6Netflix-Archaius：配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。"><a href="#2-3-6Netflix-Archaius：配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。" class="headerlink" title="　　2.3.6Netflix Archaius：配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。"></a>　　2.3.6Netflix Archaius：配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。</h4><h3 id="2-4Spring-Cloud-for-Cloud-Foundry-：-通过Oauth2-协议绑定服务到"><a href="#2-4Spring-Cloud-for-Cloud-Foundry-：-通过Oauth2-协议绑定服务到" class="headerlink" title="2.4Spring Cloud for Cloud Foundry ： 通过Oauth2 协议绑定服务到"></a>2.4Spring Cloud for Cloud Foundry ： 通过Oauth2 协议绑定服务到</h3><p>CloudFoundry，CloudFoundry 是VMware 推出的开源PaaS 云平台。</p>
-<h3 id="2-5Spring-Cloud-Sleuth：日志收集工具包，封装了Dapper-Zipkin-和HTrace"><a href="#2-5Spring-Cloud-Sleuth：日志收集工具包，封装了Dapper-Zipkin-和HTrace" class="headerlink" title="2.5Spring Cloud Sleuth：日志收集工具包，封装了Dapper,Zipkin 和HTrace"></a>2.5Spring Cloud Sleuth：日志收集工具包，封装了Dapper,Zipkin 和HTrace</h3><p>操作。</p>
-<h3 id="2-6Spring-Cloud-Data-Flow：大数据操作工具，通过命令行方式操作数据流。"><a href="#2-6Spring-Cloud-Data-Flow：大数据操作工具，通过命令行方式操作数据流。" class="headerlink" title="2.6Spring Cloud Data Flow：大数据操作工具，通过命令行方式操作数据流。"></a>2.6Spring Cloud Data Flow：大数据操作工具，通过命令行方式操作数据流。</h3><h3 id="2-7Spring-Cloud-Security：安全工具包，为你的应用程序添加安全控制，主要"><a href="#2-7Spring-Cloud-Security：安全工具包，为你的应用程序添加安全控制，主要" class="headerlink" title="2.7Spring Cloud Security：安全工具包，为你的应用程序添加安全控制，主要"></a>2.7Spring Cloud Security：安全工具包，为你的应用程序添加安全控制，主要</h3><p>是指OAuth2。</p>
-<h3 id="2-8Spring-Cloud-Consul：封装了Consul-操作，consul-是一个服务发现与配"><a href="#2-8Spring-Cloud-Consul：封装了Consul-操作，consul-是一个服务发现与配" class="headerlink" title="2.8Spring Cloud Consul：封装了Consul 操作，consul 是一个服务发现与配"></a>2.8Spring Cloud Consul：封装了Consul 操作，consul 是一个服务发现与配</h3><p>置工具，与Docker 容器可以无缝集成。</p>
-<h3 id="2-9Spring-Cloud-Zookeeper-：-操作Zookeeper-的工具包，-用于使用"><a href="#2-9Spring-Cloud-Zookeeper-：-操作Zookeeper-的工具包，-用于使用" class="headerlink" title="2.9Spring Cloud Zookeeper ： 操作Zookeeper 的工具包， 用于使用"></a>2.9Spring Cloud Zookeeper ： 操作Zookeeper 的工具包， 用于使用</h3><p>zookeeper 方式的服务注册和发现。</p>
-<h3 id="2-10Spring-Cloud-Stream：数据流操作开发包，封装了与Redis-Rabbit、"><a href="#2-10Spring-Cloud-Stream：数据流操作开发包，封装了与Redis-Rabbit、" class="headerlink" title="2.10Spring Cloud Stream：数据流操作开发包，封装了与Redis,Rabbit、"></a>2.10Spring Cloud Stream：数据流操作开发包，封装了与Redis,Rabbit、</h3><p>Kafka 等发送接收消息。</p>
-<h3 id="2-11Spring-Cloud-CLI：基于Spring-Boot-CLI，可以让你以命令行方式快速"><a href="#2-11Spring-Cloud-CLI：基于Spring-Boot-CLI，可以让你以命令行方式快速" class="headerlink" title="2.11Spring Cloud CLI：基于Spring Boot CLI，可以让你以命令行方式快速"></a>2.11Spring Cloud CLI：基于Spring Boot CLI，可以让你以命令行方式快速</h3><p>建立云组件。</p>
-
+        <h2 id="1-概念定义">1.概念定义</h2>
+<p>SpringCloud是一个微服务框架，相比Dubbo等RPC框架,<strong>SpringCloud提供了全套的分布式系统解决方案</strong>。<br>
+　　Spring Cloud 对微服务基础框架Netflix 的多个开源组件进行了封装，同时又实现了和云端平台以及和Spring Boot 开发框架的集成。<br>
+　　Spring Cloud 为微服务架构开发涉及的__配置管理，服务治理，熔断机制，智能路由，微代理，控制总线，一次性token，全局一致性锁，leader 选举，分布式session，集群状态__管理等操作提供了一种简单的开发方式。<br>
+　　Spring Cloud 为开发者提供了快速构建分布式系统的工具，开发者可以快速的启动服务或构建应用、同时能够快速和云平台资源进行对接。</p>
+<h2 id="2-Spring-Cloud-的子项目">2.Spring Cloud 的子项目</h2>
+<p>Spring Cloud 包含了很多子项目，如：</p>
+<h3 id="2-1Spring-Cloud-Config：配置管理工具，支持使用Git-存储配置内容，支持应">2.1Spring Cloud Config：配置管理工具，支持使用Git 存储配置内容，支持应</h3>
+<p>用配置的外部化存储，支持客户端配置信息刷新、加解密配置内容等</p>
+<h3 id="2-2-Spring-Cloud-Bus：事件、消息总线，用于在集群（例如，配置变化事件）中">2.2 Spring Cloud Bus：事件、消息总线，用于在集群（例如，配置变化事件）中</h3>
+<p>传播状态变化，可与Spring Cloud Config 联合实现热部署。</p>
+<h3 id="2-3Spring-Cloud-Netflix：针对多种Netflix-组件提供的开发工具包，其中包括">2.3Spring Cloud Netflix：针对多种Netflix 组件提供的开发工具包，其中包括</h3>
+<p>Eureka、Hystrix、Zuul、Archaius 等。</p>
+<h4 id="2-3-1Netflix-Eureka：一个基于rest-服务的服务治理组件，包括服务注册中">2.3.1Netflix Eureka：一个基于rest 服务的服务治理组件，包括服务注册中</h4>
+<p>心、服务注册与服务发现机制的实现，实现了云端负载均衡和中间层服务器<br>
+的故障转移。</p>
+<h4 id="2-3-2Netflix-Hystrix：容错管理工具，实现断路器模式，通过控制服务的节点-从而对延迟和故障提供更强大的容错能力。">2.3.2Netflix Hystrix：容错管理工具，实现断路器模式，通过控制服务的节点,从而对延迟和故障提供更强大的容错能力。</h4>
+<h4 id="2-3-3Netflix-Ribbon：客户端负载均衡的服务调用组件。">2.3.3Netflix Ribbon：客户端负载均衡的服务调用组件。</h4>
+<h4 id="2-3-4Netflix-Feign：基于Ribbon-和Hystrix-的声明式服务调用组件。">2.3.4Netflix Feign：基于Ribbon 和Hystrix 的声明式服务调用组件。</h4>
+<h4 id="2-3-5Netflix-Zuul：微服务网关，提供动态路由，访问过滤等服务。">2.3.5Netflix Zuul：微服务网关，提供动态路由，访问过滤等服务。</h4>
+<h4 id="2-3-6Netflix-Archaius：配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。">2.3.6Netflix Archaius：配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。</h4>
+<h3 id="2-4Spring-Cloud-for-Cloud-Foundry-：-通过Oauth2-协议绑定服务到">2.4Spring Cloud for Cloud Foundry ： 通过Oauth2 协议绑定服务到</h3>
+<p>CloudFoundry，CloudFoundry 是VMware 推出的开源PaaS 云平台。</p>
+<h3 id="2-5Spring-Cloud-Sleuth：日志收集工具包，封装了Dapper-Zipkin-和HTrace">2.5Spring Cloud Sleuth：日志收集工具包，封装了Dapper,Zipkin 和HTrace</h3>
+<p>操作。</p>
+<h3 id="2-6Spring-Cloud-Data-Flow：大数据操作工具，通过命令行方式操作数据流。">2.6Spring Cloud Data Flow：大数据操作工具，通过命令行方式操作数据流。</h3>
+<h3 id="2-7Spring-Cloud-Security：安全工具包，为你的应用程序添加安全控制，主要">2.7Spring Cloud Security：安全工具包，为你的应用程序添加安全控制，主要</h3>
+<p>是指OAuth2。</p>
+<h3 id="2-8Spring-Cloud-Consul：封装了Consul-操作，consul-是一个服务发现与配">2.8Spring Cloud Consul：封装了Consul 操作，consul 是一个服务发现与配</h3>
+<p>置工具，与Docker 容器可以无缝集成。</p>
+<h3 id="2-9Spring-Cloud-Zookeeper-：-操作Zookeeper-的工具包，-用于使用">2.9Spring Cloud Zookeeper ： 操作Zookeeper 的工具包， 用于使用</h3>
+<p>zookeeper 方式的服务注册和发现。</p>
+<h3 id="2-10Spring-Cloud-Stream：数据流操作开发包，封装了与Redis-Rabbit、">2.10Spring Cloud Stream：数据流操作开发包，封装了与Redis,Rabbit、</h3>
+<p>Kafka 等发送接收消息。</p>
+<h3 id="2-11Spring-Cloud-CLI：基于Spring-Boot-CLI，可以让你以命令行方式快速">2.11Spring Cloud CLI：基于Spring Boot CLI，可以让你以命令行方式快速</h3>
+<p>建立云组件。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     
@@ -517,7 +560,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -528,7 +571,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -539,7 +582,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -547,6 +590,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -588,7 +638,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-概念定义"><span class="nav-number">1.</span> <span class="nav-text">1.概念定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Spring-Cloud-的子项目"><span class="nav-number">2.</span> <span class="nav-text">2.Spring Cloud 的子项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1Spring-Cloud-Config：配置管理工具，支持使用Git-存储配置内容，支持应"><span class="nav-number">2.1.</span> <span class="nav-text">2.1Spring Cloud Config：配置管理工具，支持使用Git 存储配置内容，支持应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Spring-Cloud-Bus：事件、消息总线，用于在集群（例如，配置变化事件）中"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 Spring Cloud Bus：事件、消息总线，用于在集群（例如，配置变化事件）中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3Spring-Cloud-Netflix：针对多种Netflix-组件提供的开发工具包，其中包括"><span class="nav-number">2.3.</span> <span class="nav-text">2.3Spring Cloud Netflix：针对多种Netflix 组件提供的开发工具包，其中包括</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1Netflix-Eureka：一个基于rest-服务的服务治理组件，包括服务注册中"><span class="nav-number">2.3.1.</span> <span class="nav-text">2.3.1Netflix Eureka：一个基于rest 服务的服务治理组件，包括服务注册中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-2Netflix-Hystrix：容错管理工具，实现断路器模式，通过控制服务的节点-从而对延迟和故障提供更强大的容错能力。"><span class="nav-number">2.3.2.</span> <span class="nav-text">　　2.3.2Netflix Hystrix：容错管理工具，实现断路器模式，通过控制服务的节点,从而对延迟和故障提供更强大的容错能力。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-3Netflix-Ribbon：客户端负载均衡的服务调用组件。"><span class="nav-number">2.3.3.</span> <span class="nav-text">　　2.3.3Netflix Ribbon：客户端负载均衡的服务调用组件。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4Netflix-Feign：基于Ribbon-和Hystrix-的声明式服务调用组件。"><span class="nav-number">2.3.4.</span> <span class="nav-text">　　2.3.4Netflix Feign：基于Ribbon 和Hystrix 的声明式服务调用组件。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-5Netflix-Zuul：微服务网关，提供动态路由，访问过滤等服务。"><span class="nav-number">2.3.5.</span> <span class="nav-text">　　2.3.5Netflix Zuul：微服务网关，提供动态路由，访问过滤等服务。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-6Netflix-Archaius：配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。"><span class="nav-number">2.3.6.</span> <span class="nav-text">　　2.3.6Netflix Archaius：配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4Spring-Cloud-for-Cloud-Foundry-：-通过Oauth2-协议绑定服务到"><span class="nav-number">2.4.</span> <span class="nav-text">2.4Spring Cloud for Cloud Foundry ： 通过Oauth2 协议绑定服务到</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5Spring-Cloud-Sleuth：日志收集工具包，封装了Dapper-Zipkin-和HTrace"><span class="nav-number">2.5.</span> <span class="nav-text">2.5Spring Cloud Sleuth：日志收集工具包，封装了Dapper,Zipkin 和HTrace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6Spring-Cloud-Data-Flow：大数据操作工具，通过命令行方式操作数据流。"><span class="nav-number">2.6.</span> <span class="nav-text">2.6Spring Cloud Data Flow：大数据操作工具，通过命令行方式操作数据流。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7Spring-Cloud-Security：安全工具包，为你的应用程序添加安全控制，主要"><span class="nav-number">2.7.</span> <span class="nav-text">2.7Spring Cloud Security：安全工具包，为你的应用程序添加安全控制，主要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-8Spring-Cloud-Consul：封装了Consul-操作，consul-是一个服务发现与配"><span class="nav-number">2.8.</span> <span class="nav-text">2.8Spring Cloud Consul：封装了Consul 操作，consul 是一个服务发现与配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-9Spring-Cloud-Zookeeper-：-操作Zookeeper-的工具包，-用于使用"><span class="nav-number">2.9.</span> <span class="nav-text">2.9Spring Cloud Zookeeper ： 操作Zookeeper 的工具包， 用于使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-10Spring-Cloud-Stream：数据流操作开发包，封装了与Redis-Rabbit、"><span class="nav-number">2.10.</span> <span class="nav-text">2.10Spring Cloud Stream：数据流操作开发包，封装了与Redis,Rabbit、</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-11Spring-Cloud-CLI：基于Spring-Boot-CLI，可以让你以命令行方式快速"><span class="nav-number">2.11.</span> <span class="nav-text">2.11Spring Cloud CLI：基于Spring Boot CLI，可以让你以命令行方式快速</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-概念定义"><span class="nav-number">1.</span> <span class="nav-text">1.概念定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Spring-Cloud-的子项目"><span class="nav-number">2.</span> <span class="nav-text">2.Spring Cloud 的子项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1Spring-Cloud-Config：配置管理工具，支持使用Git-存储配置内容，支持应"><span class="nav-number">2.1.</span> <span class="nav-text">2.1Spring Cloud Config：配置管理工具，支持使用Git 存储配置内容，支持应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Spring-Cloud-Bus：事件、消息总线，用于在集群（例如，配置变化事件）中"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 Spring Cloud Bus：事件、消息总线，用于在集群（例如，配置变化事件）中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3Spring-Cloud-Netflix：针对多种Netflix-组件提供的开发工具包，其中包括"><span class="nav-number">2.3.</span> <span class="nav-text">2.3Spring Cloud Netflix：针对多种Netflix 组件提供的开发工具包，其中包括</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1Netflix-Eureka：一个基于rest-服务的服务治理组件，包括服务注册中"><span class="nav-number">2.3.1.</span> <span class="nav-text">2.3.1Netflix Eureka：一个基于rest 服务的服务治理组件，包括服务注册中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-2Netflix-Hystrix：容错管理工具，实现断路器模式，通过控制服务的节点-从而对延迟和故障提供更强大的容错能力。"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.3.2Netflix Hystrix：容错管理工具，实现断路器模式，通过控制服务的节点,从而对延迟和故障提供更强大的容错能力。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-3Netflix-Ribbon：客户端负载均衡的服务调用组件。"><span class="nav-number">2.3.3.</span> <span class="nav-text">2.3.3Netflix Ribbon：客户端负载均衡的服务调用组件。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4Netflix-Feign：基于Ribbon-和Hystrix-的声明式服务调用组件。"><span class="nav-number">2.3.4.</span> <span class="nav-text">2.3.4Netflix Feign：基于Ribbon 和Hystrix 的声明式服务调用组件。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-5Netflix-Zuul：微服务网关，提供动态路由，访问过滤等服务。"><span class="nav-number">2.3.5.</span> <span class="nav-text">2.3.5Netflix Zuul：微服务网关，提供动态路由，访问过滤等服务。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-6Netflix-Archaius：配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。"><span class="nav-number">2.3.6.</span> <span class="nav-text">2.3.6Netflix Archaius：配置管理API，包含一系列配置管理API，提供动态类型化属性、线程安全配置操作、轮询框架、回调机制等功能。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4Spring-Cloud-for-Cloud-Foundry-：-通过Oauth2-协议绑定服务到"><span class="nav-number">2.4.</span> <span class="nav-text">2.4Spring Cloud for Cloud Foundry ： 通过Oauth2 协议绑定服务到</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5Spring-Cloud-Sleuth：日志收集工具包，封装了Dapper-Zipkin-和HTrace"><span class="nav-number">2.5.</span> <span class="nav-text">2.5Spring Cloud Sleuth：日志收集工具包，封装了Dapper,Zipkin 和HTrace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6Spring-Cloud-Data-Flow：大数据操作工具，通过命令行方式操作数据流。"><span class="nav-number">2.6.</span> <span class="nav-text">2.6Spring Cloud Data Flow：大数据操作工具，通过命令行方式操作数据流。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7Spring-Cloud-Security：安全工具包，为你的应用程序添加安全控制，主要"><span class="nav-number">2.7.</span> <span class="nav-text">2.7Spring Cloud Security：安全工具包，为你的应用程序添加安全控制，主要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-8Spring-Cloud-Consul：封装了Consul-操作，consul-是一个服务发现与配"><span class="nav-number">2.8.</span> <span class="nav-text">2.8Spring Cloud Consul：封装了Consul 操作，consul 是一个服务发现与配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-9Spring-Cloud-Zookeeper-：-操作Zookeeper-的工具包，-用于使用"><span class="nav-number">2.9.</span> <span class="nav-text">2.9Spring Cloud Zookeeper ： 操作Zookeeper 的工具包， 用于使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-10Spring-Cloud-Stream：数据流操作开发包，封装了与Redis-Rabbit、"><span class="nav-number">2.10.</span> <span class="nav-text">2.10Spring Cloud Stream：数据流操作开发包，封装了与Redis,Rabbit、</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-11Spring-Cloud-CLI：基于Spring-Boot-CLI，可以让你以命令行方式快速"><span class="nav-number">2.11.</span> <span class="nav-text">2.11Spring Cloud CLI：基于Spring Boot CLI，可以让你以命令行方式快速</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -608,7 +658,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

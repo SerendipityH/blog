@@ -68,23 +68,25 @@
 
 
 
+  <link rel="alternate" href="/blog/atom.xml" title="雅俗共赏" type="application/atom+xml">
 
 
 
 
 
-<meta name="description" content="因为电脑的系统是win10，所以信息都要加上””。">
+
+<meta name="description" content="因为电脑的系统是win10，所以信息都要加上&quot;&quot;。          document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }             const img = document.createElement(&apos;im">
 <meta name="keywords" content="日常问题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="上传jar包到maven私服问题">
 <meta property="og:url" content="http://yoursite.com/blog/2019/07/02/上传jar包到maven私服问题/index.html">
 <meta property="og:site_name" content="雅俗共赏">
-<meta property="og:description" content="因为电脑的系统是win10，所以信息都要加上””。">
+<meta property="og:description" content="因为电脑的系统是win10，所以信息都要加上&quot;&quot;。          document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }             const img = document.createElement(&apos;im">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-07-07T03:06:15.696Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="上传jar包到maven私服问题">
-<meta name="twitter:description" content="因为电脑的系统是win10，所以信息都要加上””。">
+<meta name="twitter:description" content="因为电脑的系统是win10，所以信息都要加上&quot;&quot;。          document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }             const img = document.createElement(&apos;im">
 
 
 
@@ -350,7 +352,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  17
+                  69
                 </span>
               
 
@@ -375,8 +377,26 @@
       
 
       
-        <p>因为电脑的系统是win10，所以信息都要加上””。</p>
-
+        <p>因为电脑的系统是win10，所以信息都要加上""。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
     
@@ -496,7 +516,7 @@
               
                 <a href="/blog/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -507,7 +527,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/blog/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -518,7 +538,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/blog/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -526,6 +546,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -571,7 +598,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
